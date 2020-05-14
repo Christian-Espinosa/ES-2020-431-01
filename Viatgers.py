@@ -1,4 +1,4 @@
-import Viatger.py
+from Viatger import Viatger
 
 class Viatgers:
     def __init__(self, name:str):
