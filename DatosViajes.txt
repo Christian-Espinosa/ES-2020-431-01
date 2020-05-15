@@ -1,0 +1,10 @@
+Viaje:
+Pasajeros: Alex, Anna
+Usuario: Pepe
+Destino: v1, h1
+Destino: v2, h2
+Viaje:
+Pasajeros: Alex, Anna
+Usuario: Pepe
+Destino: v1, h1
+Destino: v2, h2
