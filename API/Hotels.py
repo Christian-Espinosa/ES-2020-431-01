@@ -8,3 +8,5 @@ class Hotels:
         self.numHostes=numHostes
         self.nombre=nombre
         
+    def setPrecio(self, precio):
+        self.precio=precio

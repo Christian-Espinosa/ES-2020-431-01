@@ -3,36 +3,35 @@ import Hotels as Hotels
 
 
 
-class Booking():
+class Booking:
 
     def __init__(self):
         pass
-
-    def precio_hotel(self, ID):
+    def buscar_hotel(self, ID):
         self.lista_Hotels=[]
         f = open("API/Booking.txt")
         linea = f.readline()
         while linea != "":
-            nombre=linea
+            id=linea
+            if id==ID:
+                linea = f.readline()
+                nombre=linea
+                linea = f.readline()
+                precio=linea
+                f.close()
+                HotelDict = {
+                    "ID": id,
+                    "Nombre": nombre,
+                    "precio": precio,
+                }
+                return HotelDict
+               
             linea = f.readline()
-            DNI=linea
-            linea = f.readline()
+
             
-            calle=linea
-            linea = f.readline()
-
-            tel=linea
-
-            linea = f.readline()
-            email=linea
-
-            self.lista_Hotels.append(Hotels.Hotels(nombre,DNI,calle,tel,email))
-            linea = f.readline()
-
-            
-
-
         f.close()
+        return "Hotel no encontrado"
 
     def confirm_reserve(self, user: User, hotels: Hotels) -> bool:
+
         return True
