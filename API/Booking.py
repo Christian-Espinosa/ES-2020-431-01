@@ -6,8 +6,11 @@ import Hotels as Hotels
 class Booking():
 
     def __init__(self):
-       self.lista_User=[]
-        f = open("API/Usuarios.txt")
+        pass
+
+    def precio_hotel(self, ID):
+        self.lista_Hotels=[]
+        f = open("API/Booking.txt")
         linea = f.readline()
         while linea != "":
             nombre=linea
@@ -23,10 +26,10 @@ class Booking():
             linea = f.readline()
             email=linea
 
-            self.lista_User.append(User_ini.User_ini(nombre,DNI,calle,tel,email))
+            self.lista_Hotels.append(Hotels.Hotels(nombre,DNI,calle,tel,email))
             linea = f.readline()
 
-        
+            
 
 
         f.close()
