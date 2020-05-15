@@ -4,7 +4,7 @@ Usuario: Pepe
 Destino: v1, h1
 Destino: v2, h2
 Viaje:
-Pasajeros: Alex, Anna
-Usuario: Pepe
-Destino: v1, h1
-Destino: v2, h2
+Pasajeros: AAA, BBB
+Usuario: BBB
+Destino: v8, h8
+Destino: v4, h5
