@@ -1,4 +1,4 @@
-from Destino import Destino
+import Destino as Destino
 
 class Destinos:
     destinos=[]
@@ -17,7 +17,7 @@ class Destinos:
         return tempList
 
     def add_destino(self,id,vuelo,hotel,precio):
-        self.destinos.append(Destino(id,vuelo,hotel,precio))
+        self.destinos.append(Destino.Destino(id,vuelo,hotel,precio))
         self.num_destinos=self.num_destinos+1
 
     def remove_destino(self,id):
