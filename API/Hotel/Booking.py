@@ -1,6 +1,6 @@
-import API.AirHopping.User as User
-import API.AirHopping.User_ini as User_ini
-import Hotels as Hotels
+from API.AirHopping import User_ini as User_ini
+from API.AirHopping import User as User
+from API.Hotel import Hotels as Hotels
 
 
 

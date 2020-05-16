@@ -1,8 +1,6 @@
-import General.Viatgers as Viatgers
-import Destinos as Destinos
-import CalcularPrecio as CalcularPrecio
-import API.AirHopping as User
-import GestionarMetodoPago as GestionarMetodoPago
+from General.CalcularPrecio import CalcularPrecio as CalcularPrecio
+from General.GestionarMetodoPago import GestionarMetodoPago as GestionarMetodoPago
+
 
 class Viaje:
     
@@ -32,4 +30,4 @@ class Viaje:
         return self.Destinos_Obj.get_lista_destinos()
     
     def pagar(self,metodo):
-        return GestionarMetodoPago.GestionarMetodoPago(self.id_viaje, self.id_user, metodo)
+        return GestionarMetodoPago(self.id_viaje, self.id_user, metodo)

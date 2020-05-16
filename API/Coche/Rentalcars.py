@@ -1,6 +1,10 @@
-import API.AirHopping.User as User
-import API.AirHopping.User_ini as User_ini
-import Cars
+from API.AirHopping import User as User
+from API.AirHopping import User_ini as User_ini
+from API.Coche import Cars as Cars
+
+
+
+
 
 
 class Rentalcars:

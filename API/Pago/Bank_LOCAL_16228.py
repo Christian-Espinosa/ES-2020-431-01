@@ -1,6 +1,5 @@
-from API.AirHopping import User as User
-from API.AirHopping import User_ini as User_ini
-from API.Pago import PaymentData as PaymentData
+from API.AirHopping import User
+from . import PaymentData
 
 
 class Bank:
@@ -13,4 +12,4 @@ class Bank:
         if self.user == user.DNI:
             return True, payment_data.importe
         else:
-            return False
+            retrun False
