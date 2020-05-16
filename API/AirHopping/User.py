@@ -22,9 +22,6 @@ class User:
             self.lista_User.append(User_ini.User_ini(nombre,DNI,calle,tel,email))
             linea = f.readline()
 
-        
-
-
         f.close()
 
 

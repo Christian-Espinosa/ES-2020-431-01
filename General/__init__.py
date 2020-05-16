@@ -2,11 +2,6 @@
 #if __name__ == "__main__":
 #    pass
 
-
-
-
-
-
 lista_Viajes=[]
 
 f = open("DatosViajes.txt")
