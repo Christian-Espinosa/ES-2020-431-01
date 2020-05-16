@@ -1,9 +1,19 @@
 class Viatger:
+
+    def __init__(self,nombre,apellidos,DNI,edad):
+        self.nombre=nombre
+        self.apellidos=apellidos
+        self.DNI=DNI
+        self.edad=edad
+
+    def get_nombre(self):
+        return self.nombre
+        
+    def get_apellidos(self):
+        return self.apellidos
     
-    name=""
-
-    def __init__(self,name:str):
-        self.name=name
-
-    def get_name(self)->str:
-        return self.name
+    def get_DNI(self):
+	    return self.DNI
+	    
+	def get_edad(self):
+	    return self.edad
