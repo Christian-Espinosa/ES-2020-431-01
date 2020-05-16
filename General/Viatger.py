@@ -14,6 +14,6 @@ class Viatger:
     
     def get_DNI(self):
 	    return self.DNI
-	    
-	def get_edad(self):
-	    return self.edad
+    
+    def get_edad(self):
+        return self.edad

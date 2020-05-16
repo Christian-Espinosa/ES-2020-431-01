@@ -1,4 +1,4 @@
- from Viatger import Viatger
+from Viatger import Viatger
 
 class Viatgers:
     viatgers=[]
@@ -16,8 +16,8 @@ class Viatgers:
           tempList.append(v.get_name())
         return tempList
 
-    def add_viatger(self, name:str):
-        self.viatgers.append(Viatger(name))
+    def add_viatger(self, nombre,apellidos,DNI,edad):
+        self.viatgers.append(Viatger(nombre,apellidos,DNI,edad))
         self.num_viatgers=self.num_viatgers+1
 
     def remove_viatger(self,name:str):
