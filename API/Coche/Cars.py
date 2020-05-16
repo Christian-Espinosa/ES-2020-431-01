@@ -12,7 +12,7 @@ class Cars:
     def get_id(self)->str:
         return self.id
 
-	def get_precio(self):
+    def get_precio(self):
         return self.precio
         
     def get_dias(self):
