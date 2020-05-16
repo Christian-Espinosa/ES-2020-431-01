@@ -11,11 +11,14 @@ lista_Viajes=[]
 f = open("DatosViajes.txt")
 linea = f.readline()
 
-cont_idViaje=0
 
 while (linea != ""):
     if("Viaje:" in linea):
-
+        
+        id_viaje_t=linea
+        id_viaje_t=id_viaje_t.replace('Viaje: ','')
+        id_viaje_t=id_viaje_t.replace('\n','')
+        
         lista_destinosTemp=[]
         lista_pasajerosTemp=[]
         
@@ -87,9 +90,9 @@ while (linea != ""):
                 Destinos_Obj_temp.set_vehiculo(id_coche_t)
             
     
-        lista_Viajes.append(Viaje.Viaje(cont_idViaje,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))
+        lista_Viajes.append(Viaje.Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))
         
-        cont_idViaje=cont_idViaje+1
+
 linea = f.readline()
 
 
@@ -100,4 +103,9 @@ for x in lista_Viajes:
     print (x.get_id_user())
     print (x.get_precio())
     print (x.get_viatgers())
-    print (x.get_destinos())
+    for xx in x.get_destinos():
+        print(xx.get_id())
+        print(xx.get_vuelo())
+        print(xx.get_hotel())
+        print(xx.get_vehiculo())
+    print ("\n")

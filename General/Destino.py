@@ -1,6 +1,7 @@
 import API.Vuelo as Fligths
 import API.Hotel as Hotels
 
+
 class Destino:
 
     def __init__(self,id_destino,vuelo,hotel):
@@ -8,7 +9,7 @@ class Destino:
         self.vuelo=vuelo
         self.hotel=hotel
         #self.precioTotalPack=llamar a clacular precio...
-        self.vehiculo=""
+        self.vehiculo="None Car"
 
     def set_vehiculo(self, vehiculo):
         self.vehiculo=vehiculo
@@ -17,7 +18,7 @@ class Destino:
         return self.vuelo
         
     def get_id(self):
-        return self.id
+        return self.id_destino
         
     def get_precioTotalPack(self):
         return self.precioTotalPack
