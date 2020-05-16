@@ -1,7 +1,6 @@
-import Viatgers as Viatgers
-import Destinos as Destinos
+
+
 import CalcularPrecio as CalcularPrecio
-import API.AirHopping as User
 import GestionarMetodoPago as GestionarMetodoPago
 
 class Viaje:
@@ -9,7 +8,7 @@ class Viaje:
 
     def __init__(self,id_viaje, Viatgers_Obj, Destinos_Obj, id_user):
         self.id_viaje=id_viaje
-        self.precio=0
+        self.precio=0#Llamar a calcular precio cuando este
         self.Viatgers_Obj=Viatgers_Obj
         self.Destinos_Obj=Destinos_Obj
         self.id_user=id_user

@@ -109,3 +109,5 @@ for x in lista_Viajes:
         print(xx.get_hotel())
         print(xx.get_vehiculo())
     print ("\n")
+    
+#lista_Viajes[0].pagar("1")
