@@ -1,5 +1,5 @@
 class User_ini:
-    def __init__(self, NombreCompleto:str, DNI:str, DirPostal:str, NumTel: str, Email: str):
+    def __init__(self, NombreCompleto, DNI, DirPostal, NumTel, Email):
         self.NombreCompleto = NombreCompleto
         self.DNI = DNI
         self.DirPostal = DirPostal
@@ -19,5 +19,5 @@ class User_ini:
             
         return UserDict
         
-    def get_DNI(self)->str:
+    def get_DNI(self):
         return self.DNI

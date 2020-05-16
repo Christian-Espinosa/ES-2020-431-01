@@ -3,9 +3,9 @@
 #    pass
 
 
-from General.Viaje import Viaje as Viaje
-from General.Viatgers import Viatgers as Viatgers
-from General.Destinos import Destinos as Destinos
+from Viaje import Viaje
+from Viatgers import Viatgers 
+from Destinos import Destinos 
 
 
 

@@ -1,4 +1,4 @@
-from API.AirHopping import User_ini as User_ini
+import User_ini as User_ini
 
 
 class User:

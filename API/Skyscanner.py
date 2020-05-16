@@ -1,18 +1,14 @@
-from API.AirHopping import User as User
-from API.AirHopping import User_ini as User_ini
-from API.Coche import Cars as Cars
+import User_ini as User_ini
+import User as User
+import Flights as Flights
 
-
-
-
-
-
-class Rentalcars:
+class Skyscanner():
 
     def __init__(self):
         pass
-    def buscar_coche(self,ID:str):
-        f = open("API/Rentalcars.txt")
+    def buscar_vuelo(self, ID):
+        self.lista_Vuelos=[]
+        f = open("API/Skyscanner.txt")
         linea = f.readline()
         while linea != "":
             id=linea
@@ -22,12 +18,12 @@ class Rentalcars:
                 linea = f.readline()
                 precio=linea
                 f.close()
-                CocheDict = {
-                    "Matricula": id,
+                VueloDict = {
+                    "ID": id,
                     "Nombre": nombre,
                     "precio": precio,
                 }
-                return CocheDict
+                return VueloDict
                
             linea = f.readline()
 
@@ -35,5 +31,5 @@ class Rentalcars:
         f.close()
         return  "No encontrado"
 
-    def confirm_reserve(self, user: User, cars: Cars) -> bool:
+    def confirm_reserve(self, user, flights):
         return True

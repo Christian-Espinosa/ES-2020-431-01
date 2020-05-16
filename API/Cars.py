@@ -4,12 +4,12 @@ class Cars:
     precio=0
     dias=0
 
-    def __init__(self,id:str, precio, dias):
+    def __init__(self,id, precio, dias):
         self.id=id
         self.precio=precio
         self.dias=dias
 
-    def get_id(self)->str:
+    def get_id(self):
         return self.id
 
     def get_precio(self):

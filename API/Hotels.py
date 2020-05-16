@@ -1,6 +1,6 @@
 class Hotels:
 
-    def __init__(self, dias:int, ID:str, numHab:int, numHostes:int, nombre:str):
+    def __init__(self, dias, ID, numHab, numHostes, nombre):
         self.dias=dias
         self.ID=ID
         self.precio=0

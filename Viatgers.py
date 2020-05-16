@@ -1,4 +1,4 @@
-from General.Viatger import Viatger as Viatger
+from Viatger import Viatger as Viatger
 
 
 class Viatgers:
@@ -21,7 +21,7 @@ class Viatgers:
         self.viatgers.append(Viatger(nombre,apellidos,DNI,edad))
         self.num_viatgers=self.num_viatgers+1
 
-    def remove_viatger(self,name:str):
+    def remove_viatger(self,name):
         for i in self.viatgers:
             if i.get_nombre()==name:
                 self.viatgers.remove(i)

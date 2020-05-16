@@ -1,5 +1,5 @@
-from General.CalcularPrecio import CalcularPrecio as CalcularPrecio
-from General.GestionarMetodoPago import GestionarMetodoPago as GestionarMetodoPago
+import CalcularPrecio 
+import GestionarMetodoPago
 
 
 class Viaje:

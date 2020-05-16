@@ -1,6 +1,6 @@
-from API.AirHopping import User_ini as User_ini
-from API.AirHopping import User as User
-from API.Hotel import Hotels as Hotels
+import User_ini as User_ini
+import User as User
+import Hotels as Hotels
 
 
 
@@ -33,6 +33,6 @@ class Booking:
         f.close()
         return "No encontrado"
 
-    def confirm_reserve(self, user: User, hotels: Hotels) -> bool:
+    def confirm_reserve(self, user, hotels):
 
         return True

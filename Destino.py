@@ -1,5 +1,5 @@
-from API.Vuelo import Flights as Fligths
-from API.Hotel import Hotels as Hotels
+from API import Flights as Fligths
+from API import Hotels as Hotels
 
 
 

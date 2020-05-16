@@ -1,4 +1,4 @@
-from General.Destino import Destino as Destino
+import Destino as Destino
 
 
 class Destinos:
@@ -25,7 +25,7 @@ class Destinos:
         return temp_Ret
     
     def add_destino(self,id,vuelo,hotel):
-        self.destinos.append(Destino(id,vuelo,hotel))
+        self.destinos.append(Destino.Destino(id,vuelo,hotel))
         self.num_destinos=self.num_destinos+1
 
     def remove_destino(self,id):

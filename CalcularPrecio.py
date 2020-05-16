@@ -1,14 +1,14 @@
-from General import Viatgers as Viatgers
-from API.Hotel import Hotels as Hotels
-from  API.Vuelo import Flights as Flights
+import Viatgers as Viatgers
+from API import Hotels 
+from API import Flights as Flights
 
-from API.Coche import Rentalcars as Rentalcars
-from API.Hotel import Booking as Booking
-from API.Coche import Cars as Cars
-from API.Vuelo import Skyscanner as Skyscanner
+from API import Rentalcars as Rentalcars
+from API import Booking as Booking
+from API import Cars as Cars
+from API import Skyscanner as Skyscanner
 
 class CalcularPrecio:
-   def __init__(self, metodoPago:str, Pasajeros:Viatgers, hotel:Hotels, coche:Cars, vuelo: Flights):
+   def __init__(self, metodoPago, Pasajeros, hotel, coche, vuelo):
       self.metodoPago = metodoPago
       self.Pasajeros = Pasajeros
       self.Hotel = hotel
