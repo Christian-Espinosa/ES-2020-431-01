@@ -9,10 +9,6 @@ from General.Destinos import Destinos as Destinos
 
 
 
-import Viaje as Viaje
-import Viatgers as Viatgers
-import Destinos as Destinos
-
 lista_Viajes=[]
 
 f = open("DatosViajes.txt")
@@ -38,7 +34,7 @@ while (linea != ""):
         Pasajeros=Pasajeros.replace('Pasajeros:','')
         lista_pasajerosTemp=Pasajeros.split(",")
         
-        Viatgers_Obj_temp = Viatgers.Viatgers()
+        Viatgers_Obj_temp = Viatgers()
         for i in lista_pasajerosTemp:
             infoPasajerosTemp=i.split("-")
             id_t = infoPasajerosTemp[0]
@@ -85,7 +81,7 @@ while (linea != ""):
             linea = f.readline()
 
     
-        Destinos_Obj_temp = Destinos.Destinos()
+        Destinos_Obj_temp = Destinos()
         for j in lista_destinosTemp:
             id_destino_t = j[0]
             id_vuelo_t = j[1]
@@ -97,7 +93,7 @@ while (linea != ""):
                 Destinos_Obj_temp.set_vehiculo(id_coche_t)
             
     
-        lista_Viajes.append(Viaje.Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))
+        lista_Viajes.append(Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))
         
 
 linea = f.readline()

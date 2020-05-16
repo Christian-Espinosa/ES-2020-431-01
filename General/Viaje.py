@@ -1,8 +1,4 @@
-from General.Viatgers import Viatgers as Viatgers
-from General.Destinos import Destinos as Destinos
 from General.CalcularPrecio import CalcularPrecio as CalcularPrecio
-from API.AirHopping import User as User
-from API.AirHopping import User_ini as User_ini
 from General.GestionarMetodoPago import GestionarMetodoPago as GestionarMetodoPago
 
 

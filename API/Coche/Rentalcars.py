@@ -4,9 +4,7 @@ from API.Coche import Cars as Cars
 
 
 
-import API.AirHopping.User as User
-import API.AirHopping.User_ini as User_ini
-import Cars
+
 
 
 class Rentalcars:
