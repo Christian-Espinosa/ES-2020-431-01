@@ -3,11 +3,11 @@ import API.Hotel as Hotels
 
 class Destino:
 
-    def __init__(self,id:str,vuelo:Fligths,hotel:Hotels,precio:float):
-        self.id=id
+    def __init__(self,id_destino,vuelo,hotel):
+        self.id_destino=id_destino
         self.vuelo=vuelo
         self.hotel=hotel
-        self.precioTotalPack=precio
+        #self.precioTotalPack=llamar a clacular precio...
         self.vehiculo=""
 
     def set_vehiculo(self, vehiculo):

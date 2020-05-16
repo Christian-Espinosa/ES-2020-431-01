@@ -13,7 +13,7 @@ class Viatgers:
     def get_viatgers(self):
         tempList=[]
         for v in self.viatgers:
-          tempList.append(v.get_name())
+          tempList.append(v.get_nombre())
         return tempList
 
     def add_viatger(self, nombre,apellidos,DNI,edad):
@@ -22,7 +22,7 @@ class Viatgers:
 
     def remove_viatger(self,name:str):
         for i in self.viatgers:
-            if i.get_name()==name:
+            if i.get_nombre()==name:
                 self.viatgers.remove(i)
                 self.num_viatgers=self.num_viatgers-1
 

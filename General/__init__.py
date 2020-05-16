@@ -4,11 +4,14 @@
 
 import Viaje as Viaje
 import Viatgers as Viatgers
+import Destinos as Destinos
 
 lista_Viajes=[]
 
 f = open("DatosViajes.txt")
 linea = f.readline()
+
+cont_idViaje=0
 
 while (linea != ""):
     if("Viaje:" in linea):
@@ -16,7 +19,7 @@ while (linea != ""):
         lista_destinosTemp=[]
         lista_pasajerosTemp=[]
         
-        #Viajeros
+        #Viajeros OBJ
         
         linea = f.readline()
         Pasajeros=linea
@@ -27,7 +30,6 @@ while (linea != ""):
         
         Viatgers_Obj_temp = Viatgers.Viatgers();
         for i in lista_pasajerosTemp:
-            i=i.replace('\n','')
             infoPasajerosTemp=i.split("-")
             id_t = infoPasajerosTemp[0]
             nombre_t = infoPasajerosTemp[1]
@@ -39,7 +41,7 @@ while (linea != ""):
             
             
             
-        #Usuario (User)
+        #Usuario (User) ID ONLY
         
         linea = f.readline()
         Usuario=linea
@@ -59,28 +61,43 @@ while (linea != ""):
         Dest=Dest.replace(' ','')
         lista_destinosTemp.append(Dest.split(","))  
         
+        
+        
         linea = f.readline()
         while ("Destino:" in linea):
             Destino=linea
             Dest=Destino.replace('Destino:','')
 			
-			#vueloTempD=Flights.getFlight()
             Dest=Dest.replace('\n','')
             Dest=Dest.replace(' ','')
             lista_destinosTemp.append(Dest.split(","))  
-			
-            #lista_destinosTemp.append(Destino.Destino())
-			
+						
             linea = f.readline()
 
-    #self.lista_Viajes.append(User_ini.User_ini(nombre,DNI,calle,tel,email))
-        lista_Viajes.append(lista_pasajerosTemp)
-        lista_Viajes.append(Usuario)
-        lista_Viajes.append(lista_destinosTemp)
+    
+        Destinos_Obj_temp = Destinos.Destinos();
+        for j in lista_destinosTemp:
+            id_destino_t = j[0]
+            id_vuelo_t = j[1]
+            id_hotel_t = j[2]
+            
+            Destinos_Obj_temp.add_destino(id_destino_t,id_vuelo_t,id_hotel_t)
+            if(len(j)==4):
+                id_coche_t = j[3]
+                Destinos_Obj_temp.set_vehiculo(id_coche_t)
+            
+    
+        lista_Viajes.append(Viaje.Viaje(cont_idViaje,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))
         
+        cont_idViaje=cont_idViaje+1
 linea = f.readline()
 
 
 f.close()
 
-print (lista_Viajes)
+for x in lista_Viajes:    
+    print (x.get_id_viaje())
+    print (x.get_id_user())
+    print (x.get_precio())
+    print (x.get_viatgers())
+    print (x.get_destinos())

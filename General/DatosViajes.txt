@@ -1,10 +1,10 @@
 Viaje:
-Pasajeros: Alex, Anna
+Pasajeros: 11-Alex-Alaminos-12345678P-24, 15-Anna-Dot-87654321A-20
 Usuario: Pepe
-Destino: v1, h1
-Destino: v2, h2
+Destino: 2332,v1, h1
+Destino: 274,v2, h2
 Viaje:
-Pasajeros: AAA, BBB
+Pasajeros: 11-AA-BB-12345678P-24, 15-CC-DD-87654321A-20
 Usuario: BBB
-Destino: v8, h8
-Destino: v4, h5
+Destino: 2467,v8, h8
+Destino: 918,v4, h5
