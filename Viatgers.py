@@ -1,4 +1,4 @@
-from Viatger import Viatger
+ from Viatger import Viatger
 
 class Viatgers:
     viatgers=[]
