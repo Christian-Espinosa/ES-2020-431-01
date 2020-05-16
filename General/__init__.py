@@ -90,7 +90,8 @@ while (linea != ""):
             Destinos_Obj_temp.add_destino(id_destino_t,id_vuelo_t,id_hotel_t)
             if(len(j)==4):
                 id_coche_t = j[3]
-                Destinos_Obj_temp.set_vehiculo(id_coche_t)
+                if Destinos_Obj_temp.get_destino(id_destino_t) != None:
+                    Destinos_Obj_temp.get_destino(id_destino_t).set_vehiculo(id_coche_t)
             
     
         lista_Viajes.append(Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))

@@ -17,6 +17,13 @@ class Destinos:
           tempList.append(d)
         return tempList
 
+    def get_destino(self,id):
+        temp_Ret=None
+        for i in self.destinos:
+            if i.get_id()==id:
+                temp_Ret=i
+        return temp_Ret
+    
     def add_destino(self,id,vuelo,hotel):
         self.destinos.append(Destino(id,vuelo,hotel))
         self.num_destinos=self.num_destinos+1
