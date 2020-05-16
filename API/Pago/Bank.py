@@ -1,5 +1,6 @@
-from . import User
-from . import PaymentData
+from API.AirHopping import User as User
+from API.AirHopping import User_ini as User_ini
+from API.Pago import PaymentData as PaymentData
 
 
 class Bank:

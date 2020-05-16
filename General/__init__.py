@@ -2,6 +2,13 @@
 #if __name__ == "__main__":
 #    pass
 
+
+from General.Viaje import Viaje as Viaje
+from General.Viatgers import Viatgers as Viatgers
+from General.Destinos import Destinos as Destinos
+
+
+
 import Viaje as Viaje
 import Viatgers as Viatgers
 import Destinos as Destinos
@@ -31,7 +38,7 @@ while (linea != ""):
         Pasajeros=Pasajeros.replace('Pasajeros:','')
         lista_pasajerosTemp=Pasajeros.split(",")
         
-        Viatgers_Obj_temp = Viatgers.Viatgers();
+        Viatgers_Obj_temp = Viatgers.Viatgers()
         for i in lista_pasajerosTemp:
             infoPasajerosTemp=i.split("-")
             id_t = infoPasajerosTemp[0]
@@ -78,7 +85,7 @@ while (linea != ""):
             linea = f.readline()
 
     
-        Destinos_Obj_temp = Destinos.Destinos();
+        Destinos_Obj_temp = Destinos.Destinos()
         for j in lista_destinosTemp:
             id_destino_t = j[0]
             id_vuelo_t = j[1]

@@ -1,4 +1,5 @@
-import User_ini as User_ini
+from API.AirHopping import User_ini as User_ini
+
 
 class User:
     def __init__(self):
