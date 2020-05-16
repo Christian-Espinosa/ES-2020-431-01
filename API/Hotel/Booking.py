@@ -31,7 +31,7 @@ class Booking:
 
             
         f.close()
-        return "Hotel no encontrado"
+        return "No encontrado"
 
     def confirm_reserve(self, user: User, hotels: Hotels) -> bool:
 

@@ -1,4 +1,4 @@
-import Viatgers as Viatgers
+import General.Viatgers as Viatgers
 import Destinos as Destinos
 import CalcularPrecio as CalcularPrecio
 import API.AirHopping as User

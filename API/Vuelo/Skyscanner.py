@@ -29,7 +29,7 @@ class Skyscanner():
 
             
         f.close()
-        return "Vuelo no encontrado"
+        return  "No encontrado"
 
     def confirm_reserve(self, user: User, flights: Flights) -> bool:
         return True

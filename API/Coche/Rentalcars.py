@@ -3,17 +3,16 @@ import API.AirHopping.User_ini as User_ini
 import Cars
 
 
-class Rentalcars():
+class Rentalcars:
 
     def __init__(self):
         pass
-
-    def buscar_coche(self, matricula):
+    def buscar_coche(self,ID:str):
         f = open("API/Rentalcars.txt")
         linea = f.readline()
         while linea != "":
             id=linea
-            if id==matricula:
+            if id==ID:
                 linea = f.readline()
                 nombre=linea
                 linea = f.readline()
@@ -30,7 +29,7 @@ class Rentalcars():
 
             
         f.close()
-        return "Coche no encontrado"
+        return  "No encontrado"
 
     def confirm_reserve(self, user: User, cars: Cars) -> bool:
         return True
