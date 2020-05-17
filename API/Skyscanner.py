@@ -1,6 +1,6 @@
-import User_ini as User_ini
-import User as User
-import Flights as Flights
+#import User_ini as User_ini
+#import User as User
+#import Flights as Flights
 
 class Skyscanner():
 
