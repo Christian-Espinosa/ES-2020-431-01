@@ -8,33 +8,31 @@ from API import Cars as Cars
 from API import Skyscanner as Skyscanner
 
 class CalcularPrecio:
-   def __init__(self, metodoPago, Pasajeros, hotel, coche, vuelo):
-      self.metodoPago = metodoPago
+   def __init__(self, Pasajeros, Destinos):
       self.Pasajeros = Pasajeros
-      self.Hotel = hotel
-      self.Coche=coche
-      self.Vuelo=vuelo
+      self.destinos=Destinos
       self.precio=0
 
    def calc_precio(self):
       
-      if self.Coche.ID is not None:
-         rc=Rentalcars.Rentalcars()
-         res=rc.buscar_coche(self.Coche.ID)
-         if res!="No encontrado":
-            self.precio+=(res*self.Coche.get_dias())
+      for d in self.destinos.get_lista_destinos(): 
+         if d.get_vehiculo() is not None:
+            rc=Rentalcars.Rentalcars()
+            res=rc.buscar_coche(d.get_vehiculo().ID)
+            if res!="No encontrado":
+               self.precio+=(res['precio']*d.get_vehiculo().ID.get_dias())
 
-      if self.Hotel is not None:
-         b=Booking.Booking()
-         res=b.buscar_hotel(self.Hotel.ID)
-         if res!="No encontrado":
-            self.precio+=(res*self.Hotel.dias*self.Hotel.numHab)
+         if g.get_hotel() is not None:
+            b=Booking.Booking()
+            res=b.buscar_hotel(d.get_hotel().ID)
+            if res!="No encontrado":
+               self.precio+=(res['precio']*d.get_hotel().dias*d.get_hotel().numHab)
 
-      if self.Vuelo is not None:
-         sk=Skyscanner.Skyscanner()
-         res=sk.buscar_vuelo(self.Vuelo.ID)
-         if res!="No encontrado":
-            self.precio+=(res*self.Pasajeros.get_num_viatgers())
+         if d.get_vuelo() is not None:
+            sk=Skyscanner.Skyscanner()
+            res=sk.buscar_vuelo(d.get_vuelo().ID)
+            if res!="No encontrado":
+               self.precio+=(res['precio']*self.Pasajeros.get_num_viatgers())
             
       return self.precio
 
