@@ -12,11 +12,8 @@ class Viaje:
         self.Destinos_Obj=Destinos_Obj
         self.id_user=id_user
         #self.precio=CalcularPrecio.CalcularPrecio("Visa", Viatgers_Obj,Destinos_Obj., )
-        sum=0
-        for d in Destinos_Obj.get_lista_destinos():
-            cp=CalcularPrecio.CalcularPrecio("Visa", Viatgers_Obj, d.get_hotel(), d.get_vehiculo(), d.get_vuelo())
-            sum+=cp.calc_precio()
-        self.precio=sum
+        cp=CalcularPrecio.CalcularPrecio(Viatgers_Obj,Destinos_Obj)
+        self.precio=cp.calc_precio()
 
     def get_id_viaje(self):
         return self.id_viaje
