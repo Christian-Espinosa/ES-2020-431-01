@@ -1,11 +1,11 @@
 import Viatgers as Viatgers
-from API import Hotels 
-from API import Flights as Flights
+from API.AirHopping import Hotels 
+from API.Vuelos import Flights as Flights
 
-from API import Rentalcars as Rentalcars
-from API import Booking as Booking
-from API import Cars as Cars
-from API import Skyscanner as Skyscanner
+from API.Coche import Rentalcars as Rentalcars
+from API.AirHopping import Booking as Booking
+from API.Coche import Cars as Cars
+from API.Vuelos import Skyscanner as Skyscanner
 
 class CalcularPrecio:
    def __init__(self, Pasajeros, Destinos):
