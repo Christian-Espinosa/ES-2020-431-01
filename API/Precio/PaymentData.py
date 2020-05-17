@@ -7,9 +7,16 @@
 
 class PaymentData:
 
-    def __init__(self, metodo, nom_titular, num_cuenta, codigo_s, importe):
+    def __init__(self):
+        
+        
+    def leer_fichero:
+        """
+        , metodo, nom_titular, num_cuenta, codigo_s, importe
+        
         self.metodo = metodo
         self.nom_titular = nom_titular
         self.num_cuenta = num_cuenta
         self.codigo_s = codigo_s
         self.importe = importe
+        """
