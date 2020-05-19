@@ -14,13 +14,38 @@ class PaymentData:
         self.codi_seg=""
         self.importe=""
         
-    def leer_fichero:
-        """
-        , metodo, nom_titular, num_cuenta, codigo_s, importe
-        
-        self.metodo = metodo
-        self.nom_titular = nom_titular
-        self.num_cuenta = num_cuenta
-        self.codigo_s = codigo_s
-        self.importe = importe
-        """
+    def leer_datos(self):
+        self.lista_Vuelos=[]
+        f = open("API/Precio/PaymentData.txt")
+        linea = f.readline()
+        while linea != "":
+            titular=linea
+            if titular==self.titular:
+                linea = f.readline()
+                numero=linea
+                linea = f.readline()
+                codi_seg=linea
+                linea = f.readline()
+                metodo=linea
+                linea = f.readline()
+                importe=linea
+                f.close()
+                PaymentDict = {
+                    "Titular": titular,
+                    "Numero": numero,
+                    "Codigo seguridad": codi_seg,
+                    "Metodo":metodo,
+                    "Importe":importe,
+                }
+                return PaymentDict
+            else:
+                linea = f.readline()
+                linea = f.readline()
+                linea = f.readline()
+                linea = f.readline()
+
+            linea = f.readline()
+
+
+        f.close()
+        return  "No encontrado"

@@ -3,11 +3,13 @@ from API.Airhopping import User
 from API.Precio import Bank
 class GestionarMetodoPago:
     
-    def __init__(self, Pasajeros, Destinos):
-        self.precio = CalcularPrecio(Pasajeros, Destinos).calc_precio()
+    def __init__(self, precio, Usuario, metodo):
+        self.precio = precio
+        self.usuario=Usuario
+        self.metodo=metodo
         
-    def Pagar(User, contra, metodo, importe):
-            if Bank(User, contra).Pagar(self.precio, metodo) == True:
+    def Pagar(self):
+            if Bank(self.usuario).Pagar(self.precio, self.metodo) == True:
                 print("Transacció correcta")
             else:
                 print("Transacció incorrecta")

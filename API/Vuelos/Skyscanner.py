@@ -24,6 +24,9 @@ class Skyscanner():
                     "precio": precio,
                 }
                 return VueloDict
+            else:
+                linea = f.readline()
+                linea = f.readline()
 
             linea = f.readline()
 

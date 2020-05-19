@@ -26,6 +26,9 @@ class Booking:
                     "precio": precio,
                 }
                 return HotelDict
+            else:
+                linea = f.readline()
+                linea = f.readline()
 
             linea = f.readline()
 

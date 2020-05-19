@@ -29,6 +29,9 @@ class Rentalcars:
                     "precio": precio,
                 }
                 return CocheDict
+            else:
+                linea = f.readline()
+                linea = f.readline()
 
             linea = f.readline()
 
