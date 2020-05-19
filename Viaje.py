@@ -11,7 +11,7 @@ class Viaje:
         self.Viatgers_Obj=Viatgers_Obj
         self.Destinos_Obj=Destinos_Obj
         self.User_Obj=User_Obj
-        #self.precio=CalcularPrecio.CalcularPrecio("Visa", Viatgers_Obj,Destinos_Obj., )
+        
         cp=CalcularPrecio.CalcularPrecio(Viatgers_Obj,Destinos_Obj)
         self.precio=cp.calc_precio()
 
@@ -32,5 +32,3 @@ class Viaje:
 
     def pagar(self,metodo):
         return GestionarMetodoPago(self.precio, self.User_obj, metodo)
-
-#precio, obj user, metodopago
