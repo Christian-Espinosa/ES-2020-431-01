@@ -8,7 +8,7 @@ class Skyscanner():
         pass
     def buscar_vuelo(self, ID):
         self.lista_Vuelos=[]
-        f = open("API/Skyscanner.txt")
+        f = open("API/Vuelos/Skyscanner.txt")
         linea = f.readline()
         while linea != "":
             id=linea
@@ -24,10 +24,10 @@ class Skyscanner():
                     "precio": precio,
                 }
                 return VueloDict
-               
+
             linea = f.readline()
 
-            
+
         f.close()
         return  "No encontrado"
 

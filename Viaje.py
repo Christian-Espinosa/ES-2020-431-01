@@ -30,5 +30,8 @@ class Viaje:
     def get_destinos(self):
         return self.Destinos_Obj.get_lista_destinos()
 
-    def pagar(self,metodo):
-        return GestionarMetodoPago(self.id_viaje, self.id_user, metodo)
+    #def pagar(self,metodo):
+
+        #return GestionarMetodoPago(self.id_viaje, self.id_user, metodo)
+
+#precio, obj user, metodopago

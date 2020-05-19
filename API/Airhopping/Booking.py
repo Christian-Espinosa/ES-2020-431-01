@@ -10,7 +10,7 @@ class Booking:
         pass
     def buscar_hotel(self, ID):
         self.lista_Hotels=[]
-        f = open("API/Booking.txt")
+        f = open("API/Airhopping/Booking.txt")
         linea = f.readline()
         while linea != "":
             id=linea
@@ -26,10 +26,10 @@ class Booking:
                     "precio": precio,
                 }
                 return HotelDict
-               
+
             linea = f.readline()
 
-            
+
         f.close()
         return "No encontrado"
 

@@ -13,7 +13,7 @@ class Rentalcars:
         pass
 
     def buscar_coche(self,ID):
-        f = open("API/Rentalcars.txt")
+        f = open("API/Coche/Rentalcars.txt")
         linea = f.readline()
         while linea != "":
             id=linea
@@ -29,10 +29,10 @@ class Rentalcars:
                     "precio": precio,
                 }
                 return CocheDict
-               
+
             linea = f.readline()
 
-            
+
         f.close()
         return  "No encontrado"
 
