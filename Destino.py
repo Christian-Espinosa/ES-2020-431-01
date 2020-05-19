@@ -1,5 +1,5 @@
 from API.Vuelos import Flights as Fligths
-from API.AirHopping import Hotels as Hotels
+from API.Airhopping import Hotels as Hotels
 
 
 class Destino:

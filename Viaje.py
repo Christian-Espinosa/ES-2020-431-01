@@ -1,5 +1,5 @@
 import CalcularPrecio
-import GestionarMetodoPago
+#import GestionarMetodoPago
 
 
 class Viaje:
