@@ -1,5 +1,5 @@
 import CalcularPrecio
-#import GestionarMetodoPago
+import GestionarMetodoPago
 
 
 class Viaje:
@@ -31,7 +31,6 @@ class Viaje:
         return self.Destinos_Obj.get_lista_destinos()
 
     def pagar(self,metodo):
-
-        #return GestionarMetodoPago(self.id_viaje, self.id_user, metodo)
+        return GestionarMetodoPago(self.precio, self.User_obj, metodo)
 
 #precio, obj user, metodopago

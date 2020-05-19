@@ -34,7 +34,6 @@ linea = f.readline()
 
 while (linea != ""):
     if("Viaje:" in linea):
-
         id_viaje_t=linea
         id_viaje_t=id_viaje_t.replace('Viaje: ','')
         id_viaje_t=id_viaje_t.replace('\n','')
@@ -72,7 +71,7 @@ while (linea != ""):
         Usuario=Usuario.replace(' ','')
         Usuario=Usuario.replace('Usuario:','')
 
-        User_Obj_temp = User()
+        User_Obj_temp = User.User()
         Usuario_Obj_temp = User_Obj_temp.getDatosUser(Usuario)
 
 
@@ -139,7 +138,7 @@ while (linea != ""):
                     Destinos_Obj_temp.get_destino(id_destino_t).set_vehiculo(car_obj_t)
 
 
-        lista_Viajes.append(Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario))
+        lista_Viajes.append(Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario_Obj_temp))
 
 
 linea = f.readline()
@@ -149,7 +148,7 @@ f.close()
 
 for x in lista_Viajes:
     print (x.get_id_viaje())
-    print (x.get_id_user())
+    print (x.get_user())
     print (x.get_precio())
     print (x.get_viatgers())
     for xx in x.get_destinos():
