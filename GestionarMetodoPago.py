@@ -10,7 +10,7 @@ class GestionarMetodoPago:
         
     def Pagar(self):
             if Bank(self.usuario).Pagar(self.precio, self.metodo) == True:
-                print("Transacció correcta")
+                print("Transaccio correcta")
             else:
-                print("Transacció incorrecta")
+                print("Transaccio incorrecta")
     

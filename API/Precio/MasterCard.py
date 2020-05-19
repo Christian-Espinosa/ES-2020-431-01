@@ -5,7 +5,7 @@ class MasterCard:
         self.pago = cantidad
         
     def pagar(self):
-        if id_banco!=none and cantidad!=none:
+        if id_banco!=None and cantidad!=None:
             return True
         else:
             return False
