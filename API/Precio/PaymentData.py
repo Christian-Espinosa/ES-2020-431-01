@@ -8,7 +8,11 @@
 class PaymentData:
 
     def __init__(self):
-        
+        self.metode=""
+        self.titular=""
+        self.numero=""
+        self.codi_seg=""
+        self.importe=""
         
     def leer_fichero:
         """
