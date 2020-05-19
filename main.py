@@ -15,7 +15,7 @@
 from Viaje import Viaje
 from Viatgers import Viatgers
 from Destinos import Destinos
-#from API.Vuelos import Flights as Fligths
+
 from API.Coche import Rentalcars as Rentalcars
 from API.Airhopping import Booking as Booking
 from API.Vuelos import Skyscanner as Skyscanner
@@ -23,6 +23,8 @@ from API.Vuelos import Skyscanner as Skyscanner
 from API.Vuelos import Flights as Flights
 from API.Airhopping import Hotels as Hotels
 from API.Coche import Cars as Cars
+
+from API.Airhopping import User as User
 
 lista_Viajes=[]
 
@@ -70,7 +72,8 @@ while (linea != ""):
         Usuario=Usuario.replace(' ','')
         Usuario=Usuario.replace('Usuario:','')
 
-
+        User_Obj_temp = User()
+        Usuario_Obj_temp = User_Obj_temp.getDatosUser(Usuario)
 
 
         #Destino
