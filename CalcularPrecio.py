@@ -1,9 +1,9 @@
 import Viatgers as Viatgers
-from API.AirHopping import Hotels 
+from API.Airhopping import Hotels as Hotels
 from API.Vuelos import Flights as Flights
 
 from API.Coche import Rentalcars as Rentalcars
-from API.AirHopping import Booking as Booking
+from API.Airhopping import Booking as Booking
 from API.Coche import Cars as Cars
 from API.Vuelos import Skyscanner as Skyscanner
 

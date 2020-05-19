@@ -5,7 +5,7 @@ class Visa:
         self.pago = cantidad
         
     def pagar(self):
-        if id_banco!=none&&cantidad!=none:
+        if id_banco!=none and cantidad!=none:
             return True
         else:
             return False
