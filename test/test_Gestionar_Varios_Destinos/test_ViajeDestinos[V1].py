@@ -27,6 +27,8 @@ from API.Vuelos import Flights as Flights
 from API.Airhopping import Booking as Booking
 from API.Airhopping import Hotels as Hotels
 
+from CalcularPrecio import CalcularPrecio
+
 ##comando para ejecutar este test unicamente (Hay que estar en el directorio raiz ES-2020-431-01!!!! ) => pytest test/test_Gestionar_Varios_Destinos/
 
 
@@ -94,7 +96,11 @@ class TestDestino(unittest.TestCase):
             h_obj_t2=Hotels.Hotels(2, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
             h_obj_t2.setPrecio(bk_dic2['precio'])#precio
 
-            sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+            #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+
+            #Hotel + Vuelo
+            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+            sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
 
             Destinos_t2.add_destino("d001",v_obj_t2,h_obj_t2)
 
@@ -108,7 +114,11 @@ class TestDestino(unittest.TestCase):
             h_obj_t2=Hotels.Hotels(1, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
             h_obj_t2.setPrecio(bk_dic2['precio'])#precio
 
-            sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+            #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+
+            #Hotel + Vuelo
+            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+            sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
 
             Destinos_t2.add_destino("d002",v_obj_t2,h_obj_t2)
 
@@ -130,14 +140,12 @@ class TestDestino(unittest.TestCase):
     def test_viaje_con_destinos_precio(self):
 
         precio = self.Viaje_t2.get_precio()
-        #assert precio == float(394.5)
-        assert precio >= self.sumPrecio
+        assert precio == float(self.sumPrecio)
 
     def test_viaje_con_destinos_viajeros_precio(self):
 
         precio = self.Viaje_t2.get_precio()
-        #assert precio == float(394.5)
-        assert precio >= self.sumPrecio
+        assert precio == float(self.sumPrecio)
 
 
 
@@ -164,7 +172,11 @@ class TestDestino(unittest.TestCase):
             h_obj_t3=Hotels.Hotels(2, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
             h_obj_t3.setPrecio(bk_dic3['precio'])#precio
 
-            sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+
+            #Hotel + Vuelo
+            sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
+            sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
 
             Destinos_t3.add_destino("d001",v_obj_t3,h_obj_t3)
 
@@ -178,7 +190,11 @@ class TestDestino(unittest.TestCase):
             h_obj_t3=Hotels.Hotels(1, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
             h_obj_t3.setPrecio(bk_dic3['precio'])#precio
 
-            sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+
+            #Hotel + Vuelo
+            sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
+            sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
 
             Destinos_t3.add_destino("d002",v_obj_t3,h_obj_t3)
 
@@ -186,6 +202,9 @@ class TestDestino(unittest.TestCase):
 
 
     Viaje_t3.remove_destino("d001")
+
+    sp3=CalcularPrecio(Viajeros_t3,Destinos_t3)
+    sumPrecio3=sp3.calc_precio()
 
     def test_viaje_con_destinos_listaDestinos2(self):
 
@@ -202,5 +221,4 @@ class TestDestino(unittest.TestCase):
     def test_viaje_con_destinos_precio2(self):
 
         precio = self.Viaje_t3.get_precio()
-        #assert precio == float(394.5)
-        assert precio > 0
+        assert precio == float(self.sumPrecio3)

@@ -9,7 +9,5 @@
   "test/Realizar Pago viaje/test_Realizar_Pago_viaje[V1].py": true,
   "test/mock/test_mock_1.py": true,
   "test/mock/test_mock_1.py::TestMock1::test_Confirmar_reserva": true,
-  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino": true,
-  "test/test_Gestionar_numero_viajeros/test_NumeroViajeros[V1].py::Test_NumeroViajeros": true,
   "test/test_ViajeDestinos.py": true
 }
