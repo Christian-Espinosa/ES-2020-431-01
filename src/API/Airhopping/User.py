@@ -6,7 +6,7 @@ from API.Airhopping import User_ini as User_ini
 class User:
     def __init__(self):
         self.lista_User=[]
-        f = open("API/Airhopping/Usuarios.txt")
+        f = open("/src/API/Airhopping/Usuarios.txt")
         linea = f.readline()
         while linea != "":
             nombre=linea

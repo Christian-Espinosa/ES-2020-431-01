@@ -19,7 +19,7 @@ from API.Airhopping import User as User
 
 lista_Viajes=[]
 
-f = open("DatosViajes.txt")
+f = open("src/DatosViajes.txt")
 linea = f.readline()
 
 

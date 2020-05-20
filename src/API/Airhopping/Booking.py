@@ -10,7 +10,7 @@ class Booking:
         pass
     def buscar_hotel(self, ID):
         self.lista_Hotels=[]
-        f = open("API/Airhopping/Booking.txt")
+        f = open("src/API/Airhopping/Booking.txt")
         linea = f.readline()
         while linea != "":
             id=linea

@@ -13,7 +13,7 @@ class Rentalcars:
         pass
 
     def buscar_coche(self,ID):
-        f = open("API/Coche/Rentalcars.txt")
+        f = open("src/API/Coche/Rentalcars.txt")
         linea = f.readline()
         while linea != "":
             id=linea
