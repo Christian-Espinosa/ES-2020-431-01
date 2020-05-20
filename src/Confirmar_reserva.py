@@ -4,7 +4,8 @@ Created on Fri May 15 00:25:43 2020
 
 @author: usuari
 """
-
+import os
+import os.path
 #from API.AirHopping import Booking as Booking 
 #Falla enviar el confirm
 from API.Vuelos import Skyscanner as Skyscanner
