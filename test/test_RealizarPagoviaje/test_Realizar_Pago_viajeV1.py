@@ -23,6 +23,15 @@ if not PROJECT_DIR is sys.path:
 #from src.Viaje import Viaje
 from Viatgers import Viatgers
 from API.Airhopping import User
+from Destinos import Destinos
+from API.Vuelos import Skyscanner
+from API.Vuelos import Flights
+from API.Airhopping import Booking
+from API.Airhopping import Hotels
+from API.Coche import Rentalcars
+from API.Coche import Cars
+from Viaje import Viaje
+
 
 """
 -Dado un viaje con múltiples destinos y más de un viajero, cuando el pago se
@@ -79,7 +88,7 @@ class TestGestiondepago(unittest.TestCase):
         Destinos_Obj_temp = Destinos()
         
 
-
+        id_destino_t="D_98293432"
         sc_dic=Skyscanner.Skyscanner().buscar_vuelo("F_78293")
         v_obj_t=Flights.Flights(sc_dic[0],sc_dic[2])#id, precio
 
@@ -87,7 +96,7 @@ class TestGestiondepago(unittest.TestCase):
         h_obj_t=Hotels.Hotels("5", bk_dic[0], "54", "2", bk_dic[1])
         h_obj_t.setPrecio(bk_dic[2])#precio
 
-        Destinos_Obj_temp.add_destino("D_98293432",v_obj_t,h_obj_t)
+        Destinos_Obj_temp.add_destino(id_destino_t,v_obj_t,h_obj_t)
 
         id_coche_t = "C_283782"
         dias_coche_t = "2"
@@ -101,7 +110,43 @@ class TestGestiondepago(unittest.TestCase):
         if Destinos_Obj_temp.get_destino(id_destino_t) != None:
             Destinos_Obj_temp.get_destino(id_destino_t).set_vehiculo(car_obj_t)
 
-        lista_Viajes.append(Viaje(id_viaje_t,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario_Obj_temp))
+
+         #Destino2
+
+
+        Destinos_Obj_temp = Destinos()
+        
+
+        id_destino_t="D_273832"
+        sc_dic=Skyscanner.Skyscanner().buscar_vuelo("F_27382")
+        v_obj_t=Flights.Flights(sc_dic[0],sc_dic[2])#id, precio
+
+        bk_dic=Booking.Booking().buscar_hotel("H_8391822")
+        h_obj_t=Hotels.Hotels("3", bk_dic[0], "10", "2", bk_dic[1])
+        h_obj_t.setPrecio(bk_dic[2])#precio
+
+        Destinos_Obj_temp.add_destino(id_destino_t,v_obj_t,h_obj_t)
+
+        id_coche_t = "C_283292"
+        dias_coche_t = "2"
+
+        car_dic=Rentalcars.Rentalcars().buscar_coche(id_coche_t)
+
+        precio_coche_t = car_dic[2]
+
+        car_obj_t=Cars.Cars(id_coche_t, precio_coche_t, dias_coche_t)
+
+        if Destinos_Obj_temp.get_destino(id_destino_t) != None:
+            Destinos_Obj_temp.get_destino(id_destino_t).set_vehiculo(car_obj_t)
+
+        obj_viaje=Viaje(id_viaje,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario_Obj_temp)
+        res=obj_viaje.pagar("Visa")
+
+        assert res
+
+        
+
+
 
 
 
