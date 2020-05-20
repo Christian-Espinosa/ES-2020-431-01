@@ -13,10 +13,10 @@ class PaymentData:
         self.numero=""
         self.codi_seg=""
         self.importe=""
-        
+
     def leer_datos(self):
         self.lista_Vuelos=[]
-        f = open("API/Precio/PaymentData.txt")
+        f = open("src/API/Precio/PaymentData.txt")
         linea = f.readline()
         while linea != "":
             titular=linea

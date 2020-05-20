@@ -2,6 +2,8 @@ import CalcularPrecio
 import GestionarMetodoPago
 
 
+
+
 class Viaje:
 
 
@@ -11,7 +13,7 @@ class Viaje:
         self.Viatgers_Obj=Viatgers_Obj
         self.Destinos_Obj=Destinos_Obj
         self.User_Obj=User_Obj
-        
+
         cp=CalcularPrecio.CalcularPrecio(Viatgers_Obj,Destinos_Obj)
         self.precio=cp.calc_precio()
 
@@ -22,13 +24,30 @@ class Viaje:
         return self.User_Obj
 
     def get_precio(self):
+        cp=CalcularPrecio.CalcularPrecio(self.Viatgers_Obj,self.Destinos_Obj)
+        self.precio=cp.calc_precio()
         return self.precio
 
     def get_viatgers(self):
         return self.Viatgers_Obj.get_viatgers()
 
+    def get_num_viatgers(self):
+        return self.Viatgers_Obj.get_num_viatgers()
+
     def get_destinos(self):
         return self.Destinos_Obj.get_lista_destinos()
+
+    def get_vuelos(self):
+        list_vuelos_t=[]
+        if len(self.Destinos_Obj.get_lista_destinos()) > 0:
+            for d in self.Destinos_Obj.get_lista_destinos():
+                list_vuelos_t.append(d.get_vuelo())
+
+        return list_vuelos_t
+
+    def remove_destino(self, id):
+        if self.Destinos_Obj.num_destinos > 0:
+            self.Destinos_Obj.remove_destino(id)
 
     def pagar(self,metodo):
         return GestionarMetodoPago(self.precio, self.User_obj, metodo)

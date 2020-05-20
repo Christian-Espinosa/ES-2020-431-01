@@ -16,22 +16,25 @@ class CalcularPrecio:
    def calc_precio(self):
 
       for d in self.destinos.get_lista_destinos():
+
          if d.get_vehiculo() is not None:
             rc=Rentalcars.Rentalcars()
             res=rc.buscar_coche(d.get_vehiculo().get_id())
             if res!="No encontrado":
-               self.precio+=(res['precio']*d.get_vehiculo().ID.get_dias())
+               self.precio+=(float(res['precio'])*int(d.get_vehiculo().get_dias()))
 
          if d.get_hotel() is not None:
             b=Booking.Booking()
             res=b.buscar_hotel(d.get_hotel().ID)
             if res!="No encontrado":
-               self.precio+=(res['precio']*d.get_hotel().dias*d.get_hotel().numHab)
+               self.precio+=(float(res['precio'])*int(d.get_hotel().dias)*int(d.get_hotel().numHab))
 
          if d.get_vuelo() is not None:
             sk=Skyscanner.Skyscanner()
             res=sk.buscar_vuelo(d.get_vuelo().get_id())
             if res!="No encontrado":
-               self.precio+=(res['precio']*self.Pasajeros.get_num_viatgers())
+               self.precio+=(float(res['precio'])*int(self.Pasajeros.get_num_viatgers()))
+
+
 
       return self.precio

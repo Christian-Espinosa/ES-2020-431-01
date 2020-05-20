@@ -1,10 +1,11 @@
 {
   "Calcular Precio/test_Calcular_Precio_Total[V1].py": true,
-  "Confirmar reserva/test_Confirmar_reserva[V1].py": true,
   "Gestionar Varios Destinos/test_Gestionar_varios_destinos[V1].py": true,
   "Gestionar nu\u0301mero viajeros/test_Gestionar_numero_viajeros[V1].py": true,
+  "Gestionar n\u00famero viajeros/test_NumeroViajeros.py": true,
   "Realizar Pago viaje/test_Realizar_Pago_viaje[V1].py": true,
   "mock/test_mock_1.py": true,
-  "test_RealizarPagoviaje/test_Realizar_Pago_viajeV1.py::TestGestiondepago": true,
+  "test_Gestionar_Varios_Destinos/test_ViajeDestinos.py": true,
+  "test_RealizarPagoviaje/test_Realizar_Pago_viajeV1.py::TestGestiondepago::test_realizarPago": true,
   "test_RealizarPagoviaje/test_Realizar_Pago_viaje[V1].py": true
 }
