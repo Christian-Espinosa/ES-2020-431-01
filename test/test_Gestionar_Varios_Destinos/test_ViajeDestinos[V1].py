@@ -17,7 +17,7 @@ if not PROJECT_DIR is sys.path:
     sys.path.insert(0, PROJECT_DIR)
 
 
-from Viaje import Viaje
+from Viaje import Viaje as Viaje
 from Viatgers import Viatgers
 from Destinos import Destinos
 
