@@ -174,7 +174,7 @@ class TestAlojamientos(unittest.TestCase):
         lista = self.Viaje_t3.get_alojamientos()
         assert len(lista) == 1
 
-    # def test_viaje_con_alojamientos_precio_eliminar2(self):
+    def test_viaje_con_alojamientos_precio_eliminar2(self):
     #
-    #     precio = self.Viaje_t3.get_precio()
-    #     assert precio == float(self.sumPrecio3)
+        precio = self.Viaje_t3.get_precio()
+        assert precio == float(self.sumPrecio3)

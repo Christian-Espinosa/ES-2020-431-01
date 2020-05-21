@@ -69,6 +69,9 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
 
 ####Se añaden Destinos
     sumPrecio=0
+    precio_hotel1=0
+    precio_hotel2=0
+    sumPrecio2=0
 
     Destinos_t2 = Destinos()
     Viajeros_t2 = Viatgers()
@@ -90,7 +93,8 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
             h_obj_t2.setPrecio(bk_dic2['precio'])#precio
 
             #Hotel + Vuelo
-            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+            precio_hotel1=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+            sumPrecio+=precio_hotel1
             sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
 
             Destinos_t2.add_destino("d001",v_obj_t2,h_obj_t2)
@@ -108,26 +112,37 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
             h_obj_t2.setPrecio(bk_dic2['precio'])#precio
 
             #Hotel + Vuelo
-            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+            precio_hotel2=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+            sumPrecio+=precio_hotel2
             sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
 
             Destinos_t2.add_destino("d002",v_obj_t2,h_obj_t2)
 
             Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
+
     def test_viaje_add_hotel(self):
 
-        precio = self.Viaje_t2.get_precio()
+        precio = self.Viaje_t2.get_precio()        
         assert precio == float(self.sumPrecio)
+        
 
-    #Eliminamos hotel con ID h002
-    Viaje_t2.remove_alojamiento("h002")
-    sumPrecio-=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
     def test_viaje_remove_hotel(self):
+         #Eliminamos hotel con ID h002
+        self.Viaje_t2.remove_alojamiento("d002")
+        self.sumPrecio2=self.sumPrecio-self.precio_hotel2
 
         precio = self.Viaje_t2.get_precio()
-        assert precio == float(self.sumPrecio)
+        assert precio == float(self.sumPrecio2)
 
+    def test_viaje_add_coche(self):
+        #Añadimos un coche en el destino con ID d002
 
+        rc_dic2=Rentalcars.Rentalcars().buscar_coche("7351VEL")
+        if rc_dic2!="No encontrado":
+            c_obj_t2=Cars.Cars(rc_dic2['Matricula'], rc_dic2['precio'], 1)
+            Destinos_t2.get_destino("d002").set_vehiculo(c_obj_t2)
+
+            sumPrecio2+=(float(rc_dic2['precio'])*int(c_obj_t2.get_dias()))
 
 
