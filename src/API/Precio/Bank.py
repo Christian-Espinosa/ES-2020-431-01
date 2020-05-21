@@ -10,7 +10,7 @@ class Bank:
         #self.codigo_s = pay.codi_seg
         #self.contra=contra
         
-    def Pagar(self):
+    def do_payment(self, usuario, metodo, importe):
         #if metodo=="Visa":
          #   Visa(self.num_cuenta, importe).pagar()
           #  return True
