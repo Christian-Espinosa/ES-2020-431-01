@@ -120,6 +120,9 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
         precio = self.Viaje_t2.get_precio()
         assert precio == float(self.sumPrecio)
 
+    #Eliminamos hotel con ID h002
+    Viaje_t2.remove_alojamiento("h002")
+    sumPrecio-=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
     def test_viaje_remove_hotel(self):
 
         precio = self.Viaje_t2.get_precio()
@@ -136,8 +139,6 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
     User_t3 = User.User()
     Usuario_t3 = User_t3.getDatosUser("787372-P")
 
-    #Viaje_t2 = Viaje.Viaje(0, Viajeros_t2, Destinos_t2, Usuario_t2)
-
     Viajeros_t3.add_viatger("Alex","Alaminos","12345678P","23")
     Viajeros_t3.add_viatger("Anna","Dot","98765432P","20")
 
@@ -150,7 +151,6 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
             h_obj_t3=Hotels.Hotels(2, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
             h_obj_t3.setPrecio(bk_dic3['precio'])#precio
 
-            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
 
             #Hotel + Vuelo
             sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
