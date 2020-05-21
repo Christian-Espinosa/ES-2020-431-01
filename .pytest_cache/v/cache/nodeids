@@ -1,1 +1,4 @@
-[]
+[
+  "test/test_Gestionar_Alojamientos/test_Gestionar_Alojamientos[V3].py::TestAlojamientos::test_viaje_con_alojamientos_precio",
+  "test/test_Gestionar_Alojamientos/test_Gestionar_Alojamientos[V3].py::TestAlojamientos::test_viaje_con_alojamientos_precio_eliminar"
+]

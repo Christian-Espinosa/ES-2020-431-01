@@ -136,7 +136,7 @@ class TestAlojamientos(unittest.TestCase):
             sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
             sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
 
-            Destinos_t3.add_destino("d0010",v_obj_t3,h_obj_t3)
+            Destinos_t3.add_destino("d001",v_obj_t3,h_obj_t3)
 
 
     sc_dic3=Skyscanner.Skyscanner().buscar_vuelo("f002")
@@ -155,18 +155,13 @@ class TestAlojamientos(unittest.TestCase):
             precioHotelElim=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
             sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
 
-            Destinos_t3.add_destino("d0020",v_obj_t3,h_obj_t3)
+            Destinos_t3.add_destino("d002",v_obj_t3,h_obj_t3)
 
             Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
 
 
-    # if len(Viaje_t3.get_destinos()) > 0:
-    #     for d in Viaje_t3.get_destinos():
-    #         if d.get_id()==id_dest
-    #             d.hotel=None
-
     ##Elimino el hotel del destino con id d0020
-    Viaje_t3.remove_alojamiento(d002)
+    Viaje_t3.remove_alojamiento("d002")
 
     sumPrecio3=sumPrecio3-precioHotelElim
 
