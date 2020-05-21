@@ -3,6 +3,8 @@
   "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_con_destinos_precio2",
   "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_con_destinos_viajeros_precio",
   "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_sin_destinos_precio",
-  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV1::test_viaje_add_hotel",
-  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV1::test_viaje_remove_hotel"
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Hotels::test_viaje_add_hotel",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Hotels::test_viaje_remove_hotel",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Coches::test_viaje_add_coche",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Coches::test_viaje_rm_coche"
 ]
