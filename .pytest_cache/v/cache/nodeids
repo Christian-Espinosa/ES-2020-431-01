@@ -1,3 +1,15 @@
 [
-  "test/test_Gestionar_numero_viajeros/test_NumeroViajeros[V1].py::Test_NumeroViajeros::test_numero_viajeros"
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestDestino::test_viaje_con_destinos_precio",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestDestino::test_viaje_con_destinos_precio2",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestDestino::test_viaje_con_destinos_viajeros_precio",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestDestino::test_viaje_sin_destinos_precio",
+  "test/mock/test_mock_confirmar_vuelo_reserva_V1.py::TestMock1::test_Confirmar_reserva",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaDestinos",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaDestinos2",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaVuelos",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaVuelos2",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_sin_destinos_listaDestinos",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_sin_destinos_listaVuelos",
+  "test/test_Gestionar_numero_viajeros/test_NumeroViajeros[V1].py::Test_NumeroViajeros::test_numero_viajeros",
+  "test/test_RealizarPagoviaje/test_Realizar_Pago_viajeV1.py::TestGestiondepago::test_realizarPago"
 ]

@@ -53,3 +53,9 @@ class Viaje:
         res=GestionarMetodoPago(self.precio, self.User_Obj, metodo)
         res=res.Pagar()
         return res
+
+    def remove_alojamiento(self, id_dest):
+        if len(Viaje_t3.get_destinos()) > 0:
+            for d in Viaje_t3.get_destinos():
+                if d.get_id()==id_dest
+                    d.hotel=None
