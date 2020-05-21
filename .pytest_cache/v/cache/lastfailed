@@ -1,4 +1,6 @@
 {
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py": true,
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py": true,
   "test/Calcular Precio/test_Calcular_Precio_Total[V1].py": true,
   "test/Confirmar reserva/test_Confirmar_reserva[V1].py::TestConfirmar": true,
   "test/Gestionar Varios Destinos/test_Gestionar_varios_destinos[V1].py": true,

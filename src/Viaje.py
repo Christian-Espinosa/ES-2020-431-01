@@ -55,10 +55,10 @@ class Viaje:
         return res
 
     def remove_alojamiento(self, id_dest):
-        if len(self.Destinos_Obj.get_lista_destinos()) > 0:
-            for d in self.Destinos_Obj.get_lista_destinos():
-                if d.get_id()==id_dest:
-                    d.hotel=None
+        if len(self.Destinos_Obj.get_lista_destinos()) > 0:
+            for d in self.Destinos_Obj.get_lista_destinos():
+                if d.get_id()==id_dest:
+                    d.hotel=None
     
     def remove_car(self, id_dest):
         if len(self.Destinos_Obj.get_lista_destinos()) > 0:
