@@ -1,3 +1,3 @@
 [
-  "test/test_RealizarPagoviaje/test_Realizar_Pago_viajeV1.py::TestGestiondepago::test_realizarPago"
+  "test/mock/test_mock_confirmar_vuelo_reserva_V1.py::TestMock1::test_Confirmar_reserva"
 ]
