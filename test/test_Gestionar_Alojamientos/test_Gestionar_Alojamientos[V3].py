@@ -29,7 +29,7 @@ from API.Airhopping import Hotels as Hotels
 
 from CalcularPrecio import CalcularPrecio
 
-##comando para ejecutar este test unicamente (Hay que estar en el directorio raiz ES-2020-431-01!!!! ) => pytest test/test_Gestionar_Vehiculos/
+##comando para ejecutar este test unicamente (Hay que estar en el directorio raiz ES-2020-431-01!!!! ) => pytest test/test_Gestionar_Alojamientos/
 
 
 """
@@ -97,11 +97,15 @@ class TestAlojamientos(unittest.TestCase):
             Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
 
-    def test_viaje_con_alojamientos_precio(self):
+    def test_viaje_gestionar_alojamientos1(self):
 
-        precio = self.Viaje_t2.get_precio()
-        assert precio == float(self.sumPrecio)
+        lista = self.Viaje_t2.get_alojamientos()
+        assert len(lista) == 2
 
+    # def test_viaje_con_alojamientos_precio1(self):
+    #
+    #     precio = self.Viaje_t2.get_precio()
+    #     assert precio == float(self.sumPrecio)
 
 
 
@@ -160,12 +164,17 @@ class TestAlojamientos(unittest.TestCase):
             Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
 
 
-    ##Elimino el hotel del destino con id d0020
+    ##Elimino el hotel del destino con id d002
     Viaje_t3.remove_alojamiento("d002")
 
     sumPrecio3=sumPrecio3-precioHotelElim
 
-    def test_viaje_con_alojamientos_precio_eliminar(self):
+    def test_viaje_gestionar_alojamientos2(self):
 
-        precio = self.Viaje_t3.get_precio()
-        assert precio == float(self.sumPrecio3)
+        lista = self.Viaje_t3.get_alojamientos()
+        assert len(lista) == 1
+
+    # def test_viaje_con_alojamientos_precio_eliminar2(self):
+    #
+    #     precio = self.Viaje_t3.get_precio()
+    #     assert precio == float(self.sumPrecio3)

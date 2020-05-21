@@ -29,6 +29,9 @@ from API.Airhopping import Hotels as Hotels
 
 from CalcularPrecio import CalcularPrecio
 
+from API.Coche import Rentalcars as Rentalcars
+from API.Coche import Cars as Cars
+
 ##comando para ejecutar este test unicamente (Hay que estar en el directorio raiz ES-2020-431-01!!!! ) => pytest test/test_Gestionar_Vehiculos/
 
 
@@ -42,34 +45,10 @@ viaje es el esperado
 """
 
 
-class TestDestino(unittest.TestCase):
+class TestVehiculos(unittest.TestCase):
 
 
-####Dado un viaje sin destinos
-    Destinos_t = Destinos()
-    Viajeros_t = Viatgers()
-
-    User_t = User.User()
-    Usuario_t = User_t.getDatosUser("787372-P")
-
-    Viaje_t = Viaje("v000", Viajeros_t, Destinos_t, Usuario_t)
-
-
-    def test_viaje_sin_destinos_listaDestinos(self):
-
-        listaDestinos = self.Viaje_t.get_destinos()
-        assert len(listaDestinos) == 0
-
-
-    def test_viaje_sin_destinos_listaVuelos(self):
-
-        listaVuelos = self.Viaje_t.get_vuelos()
-        assert len(listaVuelos) == 0
-
-
-
-
-####Cuando se añaden Destinos
+####Cuando se añaden vehiculos
     sumPrecio=0
 
     Destinos_t2 = Destinos()
@@ -78,8 +57,6 @@ class TestDestino(unittest.TestCase):
     User_t2 = User.User()
     Usuario_t2 = User_t2.getDatosUser("787372-P")
 
-    #Viaje_t2 = Viaje.Viaje(0, Viajeros_t2, Destinos_t2, Usuario_t2)
-
     Viajeros_t2.add_viatger("Alex","Alaminos","12345678P","23")
     Viajeros_t2.add_viatger("Anna","Dot","98765432P","20")
 
@@ -87,56 +64,48 @@ class TestDestino(unittest.TestCase):
     if sc_dic2!="No encontrado":
         v_obj_t2=Flights.Flights(sc_dic2['ID'],sc_dic2['precio'])#id, precio
 
-        bk_dic2=Booking.Booking().buscar_hotel("h001")
-        if bk_dic2!="No encontrado":
-            h_obj_t2=Hotels.Hotels(2, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
-            h_obj_t2.setPrecio(bk_dic2['precio'])#precio
+        sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+        Destinos_t2.add_destino("d001",v_obj_t2,None)
 
-            #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+        rc_dic2=Rentalcars.Rentalcars().buscar_coche("1234ABC")
+        if rc_dic2!="No encontrado":
+            c_obj_t2=Cars.Cars(rc_dic2['Matricula'], rc_dic2['precio'], 1)
+            Destinos_t2.get_destino("d001").set_vehiculo(c_obj_t2)
 
-            #Hotel + Vuelo
-            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
-            sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+            sumPrecio+=(float(rc_dic2['precio'])*int(c_obj_t2.get_dias()))
 
-            Destinos_t2.add_destino("d001",v_obj_t2,h_obj_t2)
+
 
 
     sc_dic2=Skyscanner.Skyscanner().buscar_vuelo("f002")
     if sc_dic2!="No encontrado":
         v_obj_t2=Flights.Flights(sc_dic2['ID'],sc_dic2['precio'])#id, precio
 
-        bk_dic2=Booking.Booking().buscar_hotel("h002")
-        if bk_dic2!="No encontrado":
-            h_obj_t2=Hotels.Hotels(1, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
-            h_obj_t2.setPrecio(bk_dic2['precio'])#precio
+        sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+        Destinos_t2.add_destino("d002",v_obj_t2,None)
 
-            #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+        rc_dic2=Rentalcars.Rentalcars().buscar_coche("7351VEL")
+        if rc_dic2!="No encontrado":
+            c_obj_t2=Cars.Cars(rc_dic2['Matricula'], rc_dic2['precio'], 1)
+            Destinos_t2.get_destino("d002").set_vehiculo(c_obj_t2)
 
-            #Hotel + Vuelo
-            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
-            sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+            sumPrecio+=(float(rc_dic2['precio'])*int(c_obj_t2.get_dias()))
 
-            Destinos_t2.add_destino("d002",v_obj_t2,h_obj_t2)
+        Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
-            Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
+    def test_viaje_gestionar_vehiculos1(self):
 
+        lista = self.Viaje_t2.get_vehiculos()
+        assert len(lista) == 2
 
-    def test_viaje_con_destinos_listaDestinos(self):
-
-        listaDestinos = self.Viaje_t2.get_destinos()
-        assert len(listaDestinos) == 2
-
-
-    def test_viaje_con_destinos_listaVuelos(self):
-
-        listaVuelos = self.Viaje_t2.get_vuelos()
-        assert len(listaVuelos) == 2
+    # def test_viaje_con_alojamientos_precio1(self):
+    #
+    #     precio = self.Viaje_t2.get_precio()
+    #     assert precio == float(self.sumPrecio)
 
 
 
-
-
-####Cuando se quitan destinos
+# ####Cuando se quitan vehiculos
     sumPrecio3=0
 
     Destinos_t3 = Destinos()
@@ -145,7 +114,6 @@ class TestDestino(unittest.TestCase):
     User_t3 = User.User()
     Usuario_t3 = User_t3.getDatosUser("787372-P")
 
-    #Viaje_t2 = Viaje.Viaje(0, Viajeros_t2, Destinos_t2, Usuario_t2)
 
     Viajeros_t3.add_viatger("Alex","Alaminos","12345678P","23")
     Viajeros_t3.add_viatger("Anna","Dot","98765432P","20")
@@ -154,52 +122,44 @@ class TestDestino(unittest.TestCase):
     if sc_dic3!="No encontrado":
         v_obj_t3=Flights.Flights(sc_dic3['ID'],sc_dic3['precio'])#id, precio
 
-        bk_dic3=Booking.Booking().buscar_hotel("h001")
-        if bk_dic3!="No encontrado":
-            h_obj_t3=Hotels.Hotels(2, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
-            h_obj_t3.setPrecio(bk_dic3['precio'])#precio
+        sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+        Destinos_t3.add_destino("d001",v_obj_t3,None)
 
-            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+        rc_dic3=Rentalcars.Rentalcars().buscar_coche("1234ABC")
+        if rc_dic3!="No encontrado":
+            c_obj_t3=Cars.Cars(rc_dic3['Matricula'], rc_dic3['precio'], 1)
+            Destinos_t3.get_destino("d001").set_vehiculo(c_obj_t3)
 
-            #Hotel + Vuelo
-            sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
-            sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+            sumPrecio3+=(float(rc_dic3['precio'])*int(c_obj_t3.get_dias()))
 
-            Destinos_t3.add_destino("d001",v_obj_t3,h_obj_t3)
+
 
 
     sc_dic3=Skyscanner.Skyscanner().buscar_vuelo("f002")
     if sc_dic3!="No encontrado":
         v_obj_t3=Flights.Flights(sc_dic3['ID'],sc_dic3['precio'])#id, precio
 
-        bk_dic3=Booking.Booking().buscar_hotel("h002")
-        if bk_dic3!="No encontrado":
-            h_obj_t3=Hotels.Hotels(1, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
-            h_obj_t3.setPrecio(bk_dic3['precio'])#precio
+        sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+        Destinos_t3.add_destino("d002",v_obj_t3,None)
 
-            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+        rc_dic3=Rentalcars.Rentalcars().buscar_coche("7351VEL")
+        if rc_dic3!="No encontrado":
+            c_obj_t3=Cars.Cars(rc_dic3['Matricula'], rc_dic3['precio'], 1)
+            Destinos_t3.get_destino("d002").set_vehiculo(c_obj_t3)
 
-            #Hotel + Vuelo
-            sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
-            sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+            sumPrecio3+=(float(rc_dic3['precio'])*int(c_obj_t3.get_dias()))
 
-            Destinos_t3.add_destino("d002",v_obj_t3,h_obj_t3)
-
-            Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
+        Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
 
 
-    Viaje_t3.remove_destino("d001")
+    Destinos_t3.get_destino("d001").remove_vehiculo();
 
-    sp3=CalcularPrecio(Viajeros_t3,Destinos_t3)
-    sumPrecio3=sp3.calc_precio()
+    def test_viaje_gestionar_vehiculos2(self):
 
-    def test_viaje_con_destinos_listaDestinos2(self):
+        lista = self.Viaje_t3.get_vehiculos()
+        assert len(lista) == 1
 
-        listaDestinos = self.Viaje_t3.get_destinos()
-        assert len(listaDestinos) == 1
-
-
-    def test_viaje_con_destinos_listaVuelos2(self):
-
-        listaVuelos = self.Viaje_t3.get_vuelos()
-        assert len(listaVuelos) == 1
+    # def test_viaje_con_alojamientos_precio2(self):
+    #
+    #     precio = self.Viaje_t2.get_precio()
+    #     assert precio == float(self.sumPrecio)

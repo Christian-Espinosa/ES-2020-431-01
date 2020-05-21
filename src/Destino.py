@@ -14,6 +14,9 @@ class Destino:
     def set_vehiculo(self, vehiculo):
         self.vehiculo=vehiculo
 
+    def set_hotel(self, hotel):
+        self.hotel=hotel
+
     def get_vuelo(self):
         return self.vuelo
 
@@ -28,3 +31,6 @@ class Destino:
 
     def get_vehiculo(self):
         return self.vehiculo
+
+    def remove_vehiculo(self):
+        self.vehiculo=None
