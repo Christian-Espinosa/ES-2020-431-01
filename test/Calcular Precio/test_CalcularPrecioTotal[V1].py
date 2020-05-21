@@ -15,7 +15,7 @@ PROJECT_DIR = os.path.abspath(os.path.join(TEST_DIR, os.pardir))
 PROJECT_DIR = os.path.join(PROJECT_DIR, '..', 'src')
 if not PROJECT_DIR is sys.path:
     sys.path.insert(0, PROJECT_DIR)
-    
+
 
 from Viaje import Viaje as Viaje
 from Viatgers import Viatgers
@@ -33,15 +33,18 @@ from CalcularPrecio import CalcularPrecio
 
 
 """
-- Dado un viaje sin destinos, la lista de destinos está vacía
-- Dado un viaje, cuando se añaden destinos, la lista de destinos es la esperada
-- Dado un viaje con múltiples destinos y más de un viajero, cuando se quitan
-destinos, la lista de destinos es la esperada
+- Dado un viaje sin destinos, el precio del viaje es cero
+- Dado un viaje, cuando se añaden destinos, el precio del viaje es el esperado
+- Dado un viaje con más de un viajero, cuando se añaden destinos, el precio del
+viaje es el esperado
+- Dado un viaje con múltiples destinos y más de un viajero, cuando se quitan
+destinos, el precio del viaje es el esperado
+
 
 """
 
 
-class TestDestino(unittest.TestCase):
+class TestCalcularPrecioTotalV1(unittest.TestCase):
 
 
 ####Dado un viaje sin destinos
