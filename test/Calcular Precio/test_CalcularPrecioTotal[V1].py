@@ -15,7 +15,7 @@ PROJECT_DIR = os.path.abspath(os.path.join(TEST_DIR, os.pardir))
 PROJECT_DIR = os.path.join(PROJECT_DIR, '..', 'src')
 if not PROJECT_DIR is sys.path:
     sys.path.insert(0, PROJECT_DIR)
-
+    
 
 from Viaje import Viaje as Viaje
 from Viatgers import Viatgers
@@ -53,18 +53,10 @@ class TestDestino(unittest.TestCase):
 
     Viaje_t = Viaje("v000", Viajeros_t, Destinos_t, Usuario_t)
 
+    def test_viaje_sin_destinos_precio(self):
 
-    def test_viaje_sin_destinos_listaDestinos(self):
-
-        listaDestinos = self.Viaje_t.get_destinos()
-        assert len(listaDestinos) == 0
-
-
-    def test_viaje_sin_destinos_listaVuelos(self):
-
-        listaVuelos = self.Viaje_t.get_vuelos()
-        assert len(listaVuelos) == 0
-
+        precio = self.Viaje_t.get_precio()
+        assert precio == 0
 
 
 
@@ -119,19 +111,15 @@ class TestDestino(unittest.TestCase):
 
             Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
+    def test_viaje_con_destinos_precio(self):
 
-    def test_viaje_con_destinos_listaDestinos(self):
+        precio = self.Viaje_t2.get_precio()
+        assert precio == float(self.sumPrecio)
 
-        listaDestinos = self.Viaje_t2.get_destinos()
-        assert len(listaDestinos) == 2
+    def test_viaje_con_destinos_viajeros_precio(self):
 
-
-    def test_viaje_con_destinos_listaVuelos(self):
-
-        listaVuelos = self.Viaje_t2.get_vuelos()
-        assert len(listaVuelos) == 2
-
-
+        precio = self.Viaje_t2.get_precio()
+        assert precio == float(self.sumPrecio)
 
 
 
@@ -192,13 +180,7 @@ class TestDestino(unittest.TestCase):
     sp3=CalcularPrecio(Viajeros_t3,Destinos_t3)
     sumPrecio3=sp3.calc_precio()
 
-    def test_viaje_con_destinos_listaDestinos2(self):
+    def test_viaje_con_destinos_precio2(self):
 
-        listaDestinos = self.Viaje_t3.get_destinos()
-        assert len(listaDestinos) == 1
-
-
-    def test_viaje_con_destinos_listaVuelos2(self):
-
-        listaVuelos = self.Viaje_t3.get_vuelos()
-        assert len(listaVuelos) == 1
+        precio = self.Viaje_t3.get_precio()
+        assert precio == float(self.sumPrecio3)
