@@ -47,65 +47,6 @@ viaje es el esperado
 
 class TestVehiculos(unittest.TestCase):
 
-
-####Cuando se añaden vehiculos
-    sumPrecio=0
-
-    Destinos_t2 = Destinos()
-    Viajeros_t2 = Viatgers()
-
-    User_t2 = User.User()
-    Usuario_t2 = User_t2.getDatosUser("787372-P")
-
-    Viajeros_t2.add_viatger("Alex","Alaminos","12345678P","23")
-    Viajeros_t2.add_viatger("Anna","Dot","98765432P","20")
-
-    sc_dic2=Skyscanner.Skyscanner().buscar_vuelo("f001")
-    if sc_dic2!="No encontrado":
-        v_obj_t2=Flights.Flights(sc_dic2['ID'],sc_dic2['precio'])#id, precio
-
-        sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
-        Destinos_t2.add_destino("d001",v_obj_t2,None)
-
-        rc_dic2=Rentalcars.Rentalcars().buscar_coche("1234ABC")
-        if rc_dic2!="No encontrado":
-            c_obj_t2=Cars.Cars(rc_dic2['Matricula'], rc_dic2['precio'], 1)
-            Destinos_t2.get_destino("d001").set_vehiculo(c_obj_t2)
-
-            sumPrecio+=(float(rc_dic2['precio'])*int(c_obj_t2.get_dias()))
-
-
-
-
-    sc_dic2=Skyscanner.Skyscanner().buscar_vuelo("f002")
-    if sc_dic2!="No encontrado":
-        v_obj_t2=Flights.Flights(sc_dic2['ID'],sc_dic2['precio'])#id, precio
-
-        sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
-        Destinos_t2.add_destino("d002",v_obj_t2,None)
-
-        rc_dic2=Rentalcars.Rentalcars().buscar_coche("7351VEL")
-        if rc_dic2!="No encontrado":
-            c_obj_t2=Cars.Cars(rc_dic2['Matricula'], rc_dic2['precio'], 1)
-            Destinos_t2.get_destino("d002").set_vehiculo(c_obj_t2)
-
-            sumPrecio+=(float(rc_dic2['precio'])*int(c_obj_t2.get_dias()))
-
-        Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
-
-    def test_viaje_gestionar_vehiculos1(self):
-
-        lista = self.Viaje_t2.get_vehiculos()
-        assert len(lista) == 2
-
-    # def test_viaje_con_alojamientos_precio1(self):
-    #
-    #     precio = self.Viaje_t2.get_precio()
-    #     assert precio == float(self.sumPrecio)
-
-
-
-# ####Cuando se quitan vehiculos
     sumPrecio3=0
 
     Destinos_t3 = Destinos()
@@ -152,14 +93,14 @@ class TestVehiculos(unittest.TestCase):
         Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
 
 
-    Destinos_t3.get_destino("d001").remove_vehiculo();
 
-    def test_viaje_gestionar_vehiculos2(self):
+
+    def test_viaje_gestionar_vehiculos1(self):
 
         lista = self.Viaje_t3.get_vehiculos()
-        assert len(lista) == 1
+        assert len(lista) == 2
 
-    # def test_viaje_con_alojamientos_precio2(self):
-    #
-    #     precio = self.Viaje_t2.get_precio()
-    #     assert precio == float(self.sumPrecio)
+    def test_viaje_gestionar_vehiculos2(self):
+        self.Destinos_t3.get_destino("d001").remove_vehiculo();
+        lista = self.Viaje_t3.get_vehiculos()
+        assert len(lista) == 1
