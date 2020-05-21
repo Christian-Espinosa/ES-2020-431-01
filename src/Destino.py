@@ -11,11 +11,11 @@ class Destino:
         #self.precioTotalPack=CalcularPrecio.CalcularPrecio("Visa", Viatgers_Obj,Destinos_Obj., )
         self.vehiculo=None
 
-    def set_vehiculo(self, vehiculo):
-        self.vehiculo=vehiculo
-
+    
     def set_hotel(self, hotel):
         self.hotel=hotel
+    def set_vehiculo(self, vehiculo):
+        self.vehiculo=vehiculo
 
     def get_vuelo(self):
         return self.vuelo

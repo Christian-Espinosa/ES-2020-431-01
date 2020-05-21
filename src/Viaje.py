@@ -85,8 +85,4 @@ class Viaje:
                 if d.get_id()==id_dest:
                     d.vehiculo=None
 
-    def add_car(self, id_dest, vehiculo):
-        if len(self.Destinos_Obj.get_lista_destinos()) > 0:
-            for d in self.Destinos_Obj.get_lista_destinos():
-                if d.get_id()==id_dest:
-                    d.vehiculo=vehiculo
+  
