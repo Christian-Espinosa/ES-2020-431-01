@@ -27,6 +27,5 @@
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero": true,
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinDestino": true,
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero": true,
-  "test/test_RealizarPagoviaje/test_Realizar_Pago_ViajeV2.py": true,
   "test/test_ViajeDestinos.py": true
 }
