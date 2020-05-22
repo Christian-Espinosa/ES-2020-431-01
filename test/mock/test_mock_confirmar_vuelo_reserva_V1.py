@@ -13,12 +13,12 @@ PROJECT_DIR = os.path.join(PROJECT_DIR, '..', 'src')
 if not PROJECT_DIR is sys.path:
     sys.path.insert(0, PROJECT_DIR)
 
-from Confirmar_reserva import Confirmar_Reserva
+from Confirmar_reserva_Vuelos import Confirmar_reserva_Vuelos
 from requests.exceptions import Timeout
 from unittest import mock
 
 class TestMock1(unittest.TestCase):
-    @mock.patch('Confirmar_reserva.os.path')
-    def test_Confirmar_reserva(self, mock_Reserva):
+    @mock.patch('Confirmar_reserva_Vuelos.os.path')
+    def test_Confirmar_reserva_Vuelos(self, mock_Reserva):
         
-        self.assertTrue(mock_Reserva.ConfirmacioReserva("Iberia","US-1"))
+        self.assertTrue(mock_Reserva.ConfirmacioReserva("Iberia","US-1",5))

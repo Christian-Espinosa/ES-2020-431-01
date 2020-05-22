@@ -198,6 +198,8 @@ class Test_mock_reserva_vehiculoV5(unittest.TestCase):
         if(not confirmacio):
             confirmacio=mock_reserva_vehiculo.confirmar(Viaje_t2.get_user(),Viaje_t2.get_vehiculos())
         
+        
+        #Comprovem que efectivament no es pot realitzar un altre confirmar reserva, el num conexions=0 significa que 
+        # no es contactara amb l'API perque s'ha produit un exces d'intents
         if(mock_reserva_vehiculo.num_conexions==0):
-
             self.assertFalse(mock_reserva_vehiculo.confirmar(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))

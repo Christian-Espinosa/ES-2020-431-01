@@ -16,30 +16,34 @@ from API.Airhopping import Hotels
 from API.Coche import Rentalcars
 from API.Coche import Cars
 
-class Confirmar_reserva:
+class Confirmar_reserva_Vuelos:
     ViatgeReserva=None
     def __init__(self,lista_avion, usuario,viatgers):
         self.lista_avion=lista_avion
         self.usuario=usuario
         self.viatgers= viatgers
-
+        self.intentos=4
 
     
     def GuardarViatge(self, ViatgeReserva):
         self.ViatgeReserva= ViatgeReserva
 
     def ConfirmacioReserva(self,llista_avions,user,nviatgers):
-        #Problema con la inicialización y puede que viaje
-        if((self.ViatgeReserva.get_vuelos()!=llista_avions) or ( llista_avions == [])):
+        
+        if(self.intentos<=0):
             return False
-        elif((self.ViatgeReserva.get_user()!= user) or (user == "Empty")):
+        elif((self.ViatgeReserva.get_vuelos()!=llista_avions) or ( llista_avions == [])):
+            self.intentos=self.intentos-1
             return False
-        elif((self.ViatgeReserva.get_num_viatgers() != nviatgers) or (nviatgers== "Empty")):
+        elif((self.ViatgeReserva.get_user()!= user) or (user == [])):
+            self.intentos=self.intentos-1
+            return False
+        elif((self.ViatgeReserva.get_num_viatgers() != nviatgers) or (nviatgers == [])):
+            self.intentos=self.intentos-1
             return False
         else:
             sk = Skyscanner.Skyscanner()
-            bk = Booking.Booking()
-            return (sk.confirm_reserve(user, llista_avions) and bk.confirm_reserve(user, llista_avions))
+            return (sk.confirm_reserve(user, llista_avions)
         
  
         
