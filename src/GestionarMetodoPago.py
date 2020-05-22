@@ -20,4 +20,6 @@ class GestionarMetodoPago:
         
         
     def Pagar(self):
-        return Bank().Pagar()
+        if self.done:
+            return Bank().Pagar()
+

@@ -81,38 +81,44 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
     if sc_dic2!="No encontrado":
         v_obj_t2=Flights.Flights(sc_dic2['ID'],sc_dic2['precio'])#id, precio
 
-        bk_dic2=Booking.Booking().buscar_hotel("h001")
-        if bk_dic2!="No encontrado":
-            h_obj_t2=Hotels.Hotels(2, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
-            h_obj_t2.setPrecio(bk_dic2['precio'])#precio
+        # bk_dic2=Booking.Booking().buscar_hotel("h001")
+        # if bk_dic2!="No encontrado":
+        #     h_obj_t2=Hotels.Hotels(2, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
+        #     h_obj_t2.setPrecio(bk_dic2['precio'])#precio
+        #
+        #     #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+        #
+        #     #Hotel + Vuelo
+        #     sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+        #     sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+        #
+        #     Destinos_t2.add_destino("d001",v_obj_t2,h_obj_t2)
 
-            #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
-
-            #Hotel + Vuelo
-            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
-            sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
-
-            Destinos_t2.add_destino("d001",v_obj_t2,h_obj_t2)
-
+        sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+        Destinos_t2.add_destino("d001",v_obj_t2,None)
 
     sc_dic2=Skyscanner.Skyscanner().buscar_vuelo("f002")
     if sc_dic2!="No encontrado":
         v_obj_t2=Flights.Flights(sc_dic2['ID'],sc_dic2['precio'])#id, precio
 
-        bk_dic2=Booking.Booking().buscar_hotel("h002")
-        if bk_dic2!="No encontrado":
-            h_obj_t2=Hotels.Hotels(1, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
-            h_obj_t2.setPrecio(bk_dic2['precio'])#precio
+        # bk_dic2=Booking.Booking().buscar_hotel("h002")
+        # if bk_dic2!="No encontrado":
+        #     h_obj_t2=Hotels.Hotels(1, bk_dic2['ID'], 1, 1, bk_dic2['Nombre'])
+        #     h_obj_t2.setPrecio(bk_dic2['precio'])#precio
+        #
+        #     #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
+        #
+        #     #Hotel + Vuelo
+        #     sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
+        #     sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+        #
+        #     Destinos_t2.add_destino("d002",v_obj_t2,h_obj_t2)
+        #
+        #     Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
-            #sumPrecio=sumPrecio+float(sc_dic2['precio'])+float(bk_dic2['precio'])
-
-            #Hotel + Vuelo
-            sumPrecio+=(float(bk_dic2['precio'])*int(h_obj_t2.dias)*int(h_obj_t2.numHab))
-            sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
-
-            Destinos_t2.add_destino("d002",v_obj_t2,h_obj_t2)
-
-            Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
+        sumPrecio+=(float(sc_dic2['precio'])*int(Viajeros_t2.get_num_viatgers()))
+        Destinos_t2.add_destino("d002",v_obj_t2,None)
+        Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
     def test_viaje_con_destinos_precio(self):
 
@@ -144,38 +150,45 @@ class TestCalcularPrecioTotalV1(unittest.TestCase):
     if sc_dic3!="No encontrado":
         v_obj_t3=Flights.Flights(sc_dic3['ID'],sc_dic3['precio'])#id, precio
 
-        bk_dic3=Booking.Booking().buscar_hotel("h001")
-        if bk_dic3!="No encontrado":
-            h_obj_t3=Hotels.Hotels(2, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
-            h_obj_t3.setPrecio(bk_dic3['precio'])#precio
+        # bk_dic3=Booking.Booking().buscar_hotel("h001")
+        # if bk_dic3!="No encontrado":
+        #     h_obj_t3=Hotels.Hotels(2, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
+        #     h_obj_t3.setPrecio(bk_dic3['precio'])#precio
+        #
+        #     #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+        #
+        #     #Hotel + Vuelo
+        #     sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
+        #     sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+        #
+        #     Destinos_t3.add_destino("d001",v_obj_t3,h_obj_t3)
 
-            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
-
-            #Hotel + Vuelo
-            sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
-            sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
-
-            Destinos_t3.add_destino("d001",v_obj_t3,h_obj_t3)
+        sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+        Destinos_t3.add_destino("d001",v_obj_t3,None)
 
 
     sc_dic3=Skyscanner.Skyscanner().buscar_vuelo("f002")
     if sc_dic3!="No encontrado":
         v_obj_t3=Flights.Flights(sc_dic3['ID'],sc_dic3['precio'])#id, precio
 
-        bk_dic3=Booking.Booking().buscar_hotel("h002")
-        if bk_dic3!="No encontrado":
-            h_obj_t3=Hotels.Hotels(1, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
-            h_obj_t3.setPrecio(bk_dic3['precio'])#precio
+        # bk_dic3=Booking.Booking().buscar_hotel("h002")
+        # if bk_dic3!="No encontrado":
+        #     h_obj_t3=Hotels.Hotels(1, bk_dic3['ID'], 1, 1, bk_dic3['Nombre'])
+        #     h_obj_t3.setPrecio(bk_dic3['precio'])#precio
+        #
+        #     #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
+        #
+        #     #Hotel + Vuelo
+        #     sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
+        #     sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+        #
+        #     Destinos_t3.add_destino("d002",v_obj_t3,h_obj_t3)
+        #
+        #     Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
 
-            #sumPrecio3=sumPrecio3+float(sc_dic3['precio'])+float(bk_dic3['precio'])
-
-            #Hotel + Vuelo
-            sumPrecio3+=(float(bk_dic3['precio'])*int(h_obj_t3.dias)*int(h_obj_t3.numHab))
-            sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
-
-            Destinos_t3.add_destino("d002",v_obj_t3,h_obj_t3)
-
-            Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
+        sumPrecio3+=(float(sc_dic3['precio'])*int(Viajeros_t3.get_num_viatgers()))
+        Destinos_t3.add_destino("d002",v_obj_t3,None)
+        Viaje_t3 = Viaje("v001", Viajeros_t3, Destinos_t3, Usuario_t3)
 
 
     Viaje_t3.remove_destino("d001")

@@ -1,4 +1,29 @@
 [
-  "test/test_Gestionar_Alojamientos/test_Gestionar_Alojamientos[V3].py::TestAlojamientos::test_viaje_con_alojamientos_precio",
-  "test/test_Gestionar_Alojamientos/test_Gestionar_Alojamientos[V3].py::TestAlojamientos::test_viaje_con_alojamientos_precio_eliminar"
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_con_destinos_precio",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_con_destinos_precio2",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_con_destinos_viajeros_precio",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V1].py::TestCalcularPrecioTotalV1::test_viaje_sin_destinos_precio",
+<<<<<<< HEAD
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV1::test_viaje_add_coche",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV1::test_viaje_add_hotel",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV1::test_viaje_remove_hotel",
+  "test/mock/test_mock_confirmar_vuelo_reserva_V1.py::TestMock1::test_Confirmar_reserva",
+  "test/test_Gestionar_Alojamientos/test_Gestionar_Alojamientos[V3].py::TestAlojamientos::test_viaje_gestionar_alojamientos1",
+  "test/test_Gestionar_Alojamientos/test_Gestionar_Alojamientos[V3].py::TestAlojamientos::test_viaje_gestionar_alojamientos2",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaDestinos",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaDestinos2",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaVuelos",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_con_destinos_listaVuelos2",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_sin_destinos_listaDestinos",
+  "test/test_Gestionar_Varios_Destinos/test_ViajeDestinos[V1].py::TestDestino::test_viaje_sin_destinos_listaVuelos",
+  "test/test_Gestionar_Vehiculos/test_Gestionar_Vehiculos[V3].py::TestVehiculos::test_viaje_gestionar_vehiculos1",
+  "test/test_Gestionar_Vehiculos/test_Gestionar_Vehiculos[V3].py::TestVehiculos::test_viaje_gestionar_vehiculos2",
+  "test/test_Gestionar_numero_viajeros/test_NumeroViajeros[V1].py::Test_NumeroViajeros::test_numero_viajeros",
+  "test/test_RealizarPagoviaje/test_Realizar_Pago_viajeV1.py::TestGestiondepago::test_realizarPago"
+=======
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Hotels::test_viaje_add_hotel",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Hotels::test_viaje_remove_hotel",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Coches::test_viaje_add_coche",
+  "test/Calcular Precio/test_CalcularPrecioTotal[V3].py::TestCalcularPrecioTotalV3_Coches::test_viaje_rm_coche"
+>>>>>>> 41c75a59aff43ed10c807d1991680802622bed55
 ]

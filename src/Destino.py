@@ -11,6 +11,9 @@ class Destino:
         #self.precioTotalPack=CalcularPrecio.CalcularPrecio("Visa", Viatgers_Obj,Destinos_Obj., )
         self.vehiculo=None
 
+    
+    def set_hotel(self, hotel):
+        self.hotel=hotel
     def set_vehiculo(self, vehiculo):
         self.vehiculo=vehiculo
 
@@ -28,3 +31,6 @@ class Destino:
 
     def get_vehiculo(self):
         return self.vehiculo
+
+    def remove_vehiculo(self):
+        self.vehiculo=None

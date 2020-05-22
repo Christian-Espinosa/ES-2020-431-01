@@ -45,6 +45,25 @@ class Viaje:
 
         return list_vuelos_t
 
+    def get_alojamientos(self):
+        list_alojamientos_t=[]
+        if len(self.Destinos_Obj.get_lista_destinos()) > 0:
+            for d in self.Destinos_Obj.get_lista_destinos():
+                if d.get_hotel() != None:
+                    list_alojamientos_t.append(d.get_hotel())
+
+        return list_alojamientos_t
+
+
+    def get_vehiculos(self):
+        list_vehiculos_t=[]
+        if len(self.Destinos_Obj.get_lista_destinos()) > 0:
+            for d in self.Destinos_Obj.get_lista_destinos():
+                if (d.get_vehiculo() != None):
+                    list_vehiculos_t.append(d.get_vehiculo())
+
+        return list_vehiculos_t
+
     def remove_destino(self, id):
         if self.Destinos_Obj.num_destinos > 0:
             self.Destinos_Obj.remove_destino(id)
@@ -59,9 +78,11 @@ class Viaje:
             for d in self.Destinos_Obj.get_lista_destinos():
                 if d.get_id()==id_dest:
                     d.hotel=None
-    
+
     def remove_car(self, id_dest):
         if len(self.Destinos_Obj.get_lista_destinos()) > 0:
             for d in self.Destinos_Obj.get_lista_destinos():
                 if d.get_id()==id_dest:
                     d.vehiculo=None
+
+  
