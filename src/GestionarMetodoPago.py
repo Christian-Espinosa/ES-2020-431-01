@@ -18,9 +18,11 @@ class GestionarMetodoPago:
                 self.metodo = "Visa"
             if self.done == True:
                 self.viaje = Viaje_Obj
+                self.importe = precio
+                self.usuario = Viaje_Obj.User_Obj
         
         
     def Pagar(self):
         if self.done:
-            return Bank().Pagar()
+            return Bank().do_payment(self.usuario, self.metodo, self.importe)
 

@@ -1,6 +1,7 @@
 import os
 import sys
 import unittest
+import copy
 
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.abspath(os.path.join(TEST_DIR, os.pardir))
@@ -20,7 +21,7 @@ from API.Airhopping import Hotels as Hotels
 from API.Vuelos import Skyscanner as Skyscanner
 from API.Vuelos import Flights as Flights
 
-
+from GestionarMetodoPago import GestionarMetodoPago
 from CalcularPrecio import CalcularPrecio
 
 
@@ -67,29 +68,29 @@ class test_Gestionar_Metodo_de_Pago_Visa(unittest.TestCase):
             Destinos_t.add_destino("d002",v_obj_t,h_obj_t)
     
     
-    Viaje_t = Viaje.Viaje(0, Viajeros_t, Destinos_t, Usuario_t)
+    Viaje_t = Viaje(0, Viajeros_t, Destinos_t, Usuario_t)
     
     metodo = "Visa"
     
-    Viaje_t2 = Viaje_t
-    Viaje_t3 = Viaje_t
+    Viaje_t2 = copy.copy(Viaje_t)
+    Viaje_t3 = copy.copy(Viaje_t)
 
     def test_Gestionar_Metodo_Visa(self):
         
-        x = GestionarMetodoPago(Viaje_t, metodo)
-        assert x.done == True and x.metodo == "Visa"
+        x = GestionarMetodoPago(self.Viaje_t.get_precio(), self.Viaje_t, self.metodo)
+        assert x.done and (x.metodo == "Visa")
     
     
-    def test_Gestionar_Metodo_MasterCard_SinDestino(self):
+    def test_Gestionar_Metodo_Visa_SinDestino(self):
         
-        Viaje_t2.remove_destino("d002")
-        x = GestionarMetodoPago(Viaje_t, metodo)
+        self.Viaje_t2.remove_destino("d002")
+        x = GestionarMetodoPago(self.Viaje_t2.get_precio(), self.Viaje_t2, self.metodo)
         assert x.done == False and x.metodo == None
     
     def test_Gestionar_Metodo_Visa_SinViajero(self):
         
-        Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
-        x = GestionarMetodoPago(Viaje_t, metodo)
+        self.Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
+        x = GestionarMetodoPago(self.Viaje_t3.get_precio(), self.Viaje_t3, self.metodo)
         assert x.done == False and x.metodo == None
 
 
@@ -135,28 +136,28 @@ class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
             Destinos_t.add_destino("d002",v_obj_t,h_obj_t)
     
     
-    Viaje_t = Viaje.Viaje(0, Viajeros_t, Destinos_t, Usuario_t)
+    Viaje_t = Viaje(0, Viajeros_t, Destinos_t, Usuario_t)
     
     #Definimos metodo de pago
     metodo = "MasterCard"
     
-    Viaje_t2 = Viaje_t
-    Viaje_t3 = Viaje_t
+    Viaje_t2 = copy.copy(Viaje_t)
+    Viaje_t3 = copy.copy(Viaje_t)
     
-    def test_Gestionar_Metodo_Visa(self):
+    def test_Gestionar_Metodo_MasterCard(self):
         
-        x = GestionarMetodoPago(Viaje_t, metodo)
-        assert x.done == True and x.metodo == "MasterCard"
+        x = GestionarMetodoPago(self.Viaje_t.get_precio(), self.Viaje_t, self.metodo)
+        assert x.done and x.metodo == "MasterCard"
     
     
-    def test_Gestionar_Metodo_Visa_SinDestino(self):
+    def test_Gestionar_Metodo_MasterCard_SinDestino(self):
         
-        Viaje_t2.remove_destino("d002")
-        x = GestionarMetodoPago(Viaje_t, metodo)
+        self.Viaje_t2.remove_destino("d002")
+        x = GestionarMetodoPago(self.Viaje_t2.get_precio(), self.Viaje_t2, self.metodo)
         assert x.done == False and x.metodo == None
     
-    def test_Gestionar_Metodo_Visa_SinViajero(self):
+    def test_Gestionar_Metodo_MasterCard_SinViajero(self):
         
-        Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
-        x = GestionarMetodoPago(Viaje_t, metodo)
+        self.Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
+        x = GestionarMetodoPago(self.Viaje_t3.get_precio(), self.Viaje_t3, self.metodo)
         assert x.done == False and x.metodo == None

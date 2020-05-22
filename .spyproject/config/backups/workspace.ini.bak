@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = []
+recent_files = ['src\\GestionarMetodoPago.py', 'test\\tesst_Gestionar_Metodo_de_Pago\\test_Gestionar_Metodo_de_Pago[V2].py', 'src\\API\\Precio\\Bank.py', 'src\\Viatgers.py', 'src\\API\\Airhopping\\User.py', 'src\\Viatger.py']
 
