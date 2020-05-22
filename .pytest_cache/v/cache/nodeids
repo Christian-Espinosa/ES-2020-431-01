@@ -8,5 +8,17 @@
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago[V2].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinDestino",
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard",
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinDestino",
-  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero"
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_2[V2].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_2[V2].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinDestino",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_2[V2].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_2[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_2[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinDestino",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_2[V2].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinDestino",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinDestino",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero"
 ]

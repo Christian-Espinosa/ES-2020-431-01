@@ -84,14 +84,16 @@ class test_Gestionar_Metodo_de_Pago_Visa(unittest.TestCase):
     def test_Gestionar_Metodo_Visa_SinDestino(self):
         
         self.Viaje_t2.remove_destino("d002")
+        self.Viaje_t2.remove_destino("d001")
         x = GestionarMetodoPago(self.Viaje_t2.get_precio(), self.Viaje_t2, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.metodo == "Visa"
     
     def test_Gestionar_Metodo_Visa_SinViajero(self):
         
         self.Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
+        self.Viaje_t3.Viatgers_Obj.remove_viatger("Anna")
         x = GestionarMetodoPago(self.Viaje_t3.get_precio(), self.Viaje_t3, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.metodo == "Visa"
 
 
 class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
@@ -153,11 +155,13 @@ class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
     def test_Gestionar_Metodo_MasterCard_SinDestino(self):
         
         self.Viaje_t2.remove_destino("d002")
+        self.Viaje_t2.remove_destino("d001")
         x = GestionarMetodoPago(self.Viaje_t2.get_precio(), self.Viaje_t2, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.metodo == "MasterCard"
     
     def test_Gestionar_Metodo_MasterCard_SinViajero(self):
         
         self.Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
+        self.Viaje_t3.Viatgers_Obj.remove_viatger("Anna")
         x = GestionarMetodoPago(self.Viaje_t3.get_precio(), self.Viaje_t3, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.metodo == "MasterCard"
