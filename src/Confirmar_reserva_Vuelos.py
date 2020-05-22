@@ -43,7 +43,7 @@ class Confirmar_reserva_Vuelos:
             return False
         else:
             sk = Skyscanner.Skyscanner()
-            return (sk.confirm_reserve(user, llista_avions)
+            return (sk.confirm_reserve(user, llista_avions))
         
  
         
