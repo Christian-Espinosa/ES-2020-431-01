@@ -69,7 +69,7 @@ class Viaje:
             self.Destinos_Obj.remove_destino(id)
 
     def pagar(self,metodo):
-        res=GestionarMetodoPago(self.precio, self.User_Obj, metodo)
+        res=GestionarMetodoPago(self.precio, self, metodo)
         res=res.Pagar()
         return res
 
