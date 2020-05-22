@@ -39,7 +39,6 @@ class test_Gestionar_Metodo_de_Pago_Visa(unittest.TestCase):
     
     #Añadimos dos viajeros
     Viajeros_t.add_viatger("Alex","Alaminos","12345678P","23")
-    Viajeros_t.add_viatger("Anna","Dot","98765432P","20")
     
     #Destinos
     #Añadimos dos destinos
@@ -54,45 +53,69 @@ class test_Gestionar_Metodo_de_Pago_Visa(unittest.TestCase):
             
             Destinos_t.add_destino("d001",v_obj_t,h_obj_t)
             
-            
-    
-    sc_dic=Skyscanner.Skyscanner().buscar_vuelo("f002")
-    if sc_dic!="No encontrado":
-        v_obj_t=Flights.Flights(sc_dic['ID'],sc_dic['precio'])#id, precio
-
-        bk_dic=Booking.Booking().buscar_hotel("h001")
-        if bk_dic!="No encontrado":
-            h_obj_t=Hotels.Hotels(2, bk_dic['ID'], 1, 1, bk_dic['Nombre'])
-            h_obj_t.setPrecio(bk_dic['precio'])#precio
-            
-            Destinos_t.add_destino("d002",v_obj_t,h_obj_t)
+           
     
     
     Viaje_t = Viaje(0, Viajeros_t, Destinos_t, Usuario_t)
     
     metodo = "Visa"
     
-    Viaje_t2 = copy.copy(Viaje_t)
     Viaje_t3 = copy.copy(Viaje_t)
-
-    def test_Gestionar_Metodo_Visa(self):
-        
-        x = GestionarMetodoPago(self.Viaje_t.get_precio(), self.Viaje_t, self.metodo)
-        assert x.done and (x.metodo == "Visa")
-    
+    Viaje_t2 = copy.copy(Viaje_t)
     
     def test_Gestionar_Metodo_Visa_SinDestino(self):
         
-        self.Viaje_t2.remove_destino("d002")
+        self.Viaje_t2.remove_destino("d001")
         x = GestionarMetodoPago(self.Viaje_t2.get_precio(), self.Viaje_t2, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.pagar_count == 0
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 1
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 2
+        res = x.Pagar()
+        assert x.done == False and x.pagar_count == 3
+        assert not res
+        res = x.Pagar()
+        assert not res
     
     def test_Gestionar_Metodo_Visa_SinViajero(self):
         
         self.Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
         x = GestionarMetodoPago(self.Viaje_t3.get_precio(), self.Viaje_t3, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.pagar_count == 0
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 1
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 2
+        res = x.Pagar()
+        assert x.done == False and x.pagar_count == 3
+        assert not res
+        res = x.Pagar()
+        assert not res
+    
+    def test_Gestionar_Metodo_Visa_SinViajero_SALVADO(self):
+        
 
+        x = GestionarMetodoPago(self.Viaje_t.get_precio(), self.Viaje_t, self.metodo)
+        assert x.done == False and x.pagar_count == 0
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 1
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 2
+        x.viaje.Viatgers_Obj.add_viatger("Christian","Espinosa","11111111P","22")
+        x.viaje.Destinos_Obj.add_destino("d001", self.v_obj_t, self.h_obj_t)
+        
+        res = x.Pagar()
+        assert res
+        assert x.done == True and x.pagar_count == 2
+    
+        
 
 class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
 
@@ -107,7 +130,6 @@ class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
     
     #Añadimos dos viajeros
     Viajeros_t.add_viatger("Alex","Alaminos","12345678P","23")
-    Viajeros_t.add_viatger("Anna","Dot","98765432P","20")
     
     #Destinos
     #Añadimos dos destinos
@@ -123,19 +145,6 @@ class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
             Destinos_t.add_destino("d001",v_obj_t,h_obj_t)
             
             
-    
-    sc_dic=Skyscanner.Skyscanner().buscar_vuelo("f002")
-    if sc_dic!="No encontrado":
-        v_obj_t=Flights.Flights(sc_dic['ID'],sc_dic['precio'])#id, precio
-
-        bk_dic=Booking.Booking().buscar_hotel("h001")
-        if bk_dic!="No encontrado":
-            h_obj_t=Hotels.Hotels(2, bk_dic['ID'], 1, 1, bk_dic['Nombre'])
-            h_obj_t.setPrecio(bk_dic['precio'])#precio
-            
-            Destinos_t.add_destino("d002",v_obj_t,h_obj_t)
-    
-    
     Viaje_t = Viaje(0, Viajeros_t, Destinos_t, Usuario_t)
     
     #Definimos metodo de pago
@@ -144,20 +153,57 @@ class test_Gestionar_Metodo_de_Pago_MasterCard(unittest.TestCase):
     Viaje_t2 = copy.copy(Viaje_t)
     Viaje_t3 = copy.copy(Viaje_t)
     
-    def test_Gestionar_Metodo_MasterCard(self):
-        
-        x = GestionarMetodoPago(self.Viaje_t.get_precio(), self.Viaje_t, self.metodo)
-        assert x.done and x.metodo == "MasterCard"
-    
-    
     def test_Gestionar_Metodo_MasterCard_SinDestino(self):
         
-        self.Viaje_t2.remove_destino("d002")
+        self.Viaje_t2.remove_destino("d001")
         x = GestionarMetodoPago(self.Viaje_t2.get_precio(), self.Viaje_t2, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.pagar_count == 0
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 1
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 2
+        res = x.Pagar()
+        assert x.done == False and x.pagar_count == 3
+        assert not res
+        res = x.Pagar()
+        assert not res
     
     def test_Gestionar_Metodo_MasterCard_SinViajero(self):
         
         self.Viaje_t3.Viatgers_Obj.remove_viatger("Alex")
         x = GestionarMetodoPago(self.Viaje_t3.get_precio(), self.Viaje_t3, self.metodo)
-        assert x.done == False and x.metodo == None
+        assert x.done == False and x.pagar_count == 0
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 1
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 2
+        res = x.Pagar()
+        assert x.done == False and x.pagar_count == 3
+        assert not res
+        res = x.Pagar()
+        assert not res
+        
+    def test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO(self):
+        
+
+        x = GestionarMetodoPago(self.Viaje_t.get_precio(), self.Viaje_t, self.metodo)
+        assert x.done == False and x.pagar_count == 0
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 1
+        res = x.Pagar()
+        assert not res
+        assert x.done == False and x.pagar_count == 2
+        x.viaje.Viatgers_Obj.add_viatger("Christian","Espinosa","11111111P","22")
+        x.viaje.Destinos_Obj.add_destino("d001", self.v_obj_t, self.h_obj_t)
+        
+        res = x.Pagar()
+        assert res
+        assert x.done == True and x.pagar_count == 2
+        
+        
+        
