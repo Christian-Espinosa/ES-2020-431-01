@@ -4,3 +4,9 @@ Hotel DOT
 h002
 Ritz
 122.9
+H_159753
+Rowanda
+70.80
+H_159754
+Capsule Corp
+100.20

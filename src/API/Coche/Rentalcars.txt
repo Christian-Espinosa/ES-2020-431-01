@@ -4,3 +4,9 @@ BMW x5
 7351VEL
 Tesla Model3
 99.9
+C_302165
+Opel Corsa
+60.5
+C_302166
+Citroen C5
+200.5
