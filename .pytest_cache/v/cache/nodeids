@@ -1,3 +1,4 @@
 [
-  "test/Confirmar_reserva_vehiculos/test_Confirmar_reserva_Vehiculos[V5].py::Test_mock_reserva_vehiculoV5::test_reintent_confirmacio"
+  "test/test_RealizarPagoviaje/test_Realizar_Pago_ViajeV2.py::TestGestiondepagoV2::test_realizarPagoV2",
+  "test/test_RealizarPagoviaje/test_Realizar_Pago_viajeV1.py::TestGestiondepago::test_realizarPago"
 ]
