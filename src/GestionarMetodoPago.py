@@ -8,6 +8,7 @@ class GestionarMetodoPago:
     
     def __init__(self, precio, Viaje_Obj, metodo):
         self.done = False
+        self.metodo = None
         if 1<len(Viaje_Obj.Viatgers_Obj.get_viatgers()) and 1<Viaje_Obj.Destinos_Obj.get_num_destinos():
             if metodo == "MasterCard":
                 self.done = True
