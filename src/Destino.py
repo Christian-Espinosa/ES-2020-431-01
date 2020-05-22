@@ -23,8 +23,6 @@ class Destino:
     def get_id(self):
         return self.id_destino
 
-    #def get_precioTotalPack(self):
-        #return self.precioTotalPack
 
     def get_hotel(self):
         return self.hotel

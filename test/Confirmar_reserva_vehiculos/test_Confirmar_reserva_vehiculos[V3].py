@@ -14,7 +14,6 @@ if not PROJECT_DIR is sys.path:
     sys.path.insert(0, PROJECT_DIR)
 
 
-from requests.exceptions import Timeout
 from unittest import mock
 
 from API.Coche import Rentalcars as Rentalcars
@@ -52,7 +51,7 @@ class Test_mock_reserva_vehiculo(unittest.TestCase):
 
         User_t2 = User.User()
         Usuario_t2 = User_t2.getDatosUser("787372-P")
-
+        c_obj_t3=0
 
         Viajeros_t2.add_viatger("Alex","Alaminos","12345678P","23")
         Viajeros_t2.add_viatger("Anna","Dot","98765432P","20")
@@ -106,9 +105,8 @@ class Test_mock_reserva_vehiculo(unittest.TestCase):
                     Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
         ##sin errores
-        self.assertTrue(mock_reserva_vehiculo.confirm_reserve(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))
-        #mock_reserva_vehiculo.confirm_reserve.return_value = False
-        #self.assertFalse(mock_reserva_vehiculo.confirm_reserve(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))
+        self.assertTrue(c_obj_t3.confirmar(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))
+       
 
 
 class Test_mock_reserva_vehiculo2(unittest.TestCase):
@@ -174,8 +172,7 @@ class Test_mock_reserva_vehiculo2(unittest.TestCase):
 
                         Viaje_t2 = Viaje("v001", Viajeros_t2, Destinos_t2, Usuario_t2)
 
-            #self.assertTrue(mock_reserva_vehiculo.confirm_reserve(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))
 
             ##con errores
-            mock_reserva_vehiculo.confirm_reserve.return_value = False
-            self.assertFalse(mock_reserva_vehiculo.confirm_reserve(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))
+            mock_reserva_vehiculo.confirmar.return_value = False
+            self.assertFalse(mock_reserva_vehiculo.confirmar(Viaje_t2.get_user(),Viaje_t2.get_vehiculos()))
