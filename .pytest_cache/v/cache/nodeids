@@ -24,5 +24,12 @@
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero_SALVADO",
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinDestino",
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero",
-  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO"
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_Correcto",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_Credenciales_MALAS",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_Credenciales_CodigoSeguridadIncorrecto",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_Credenciales_CuentaIncorrecta",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_Credenciales_titularIncorrecto"
 ]

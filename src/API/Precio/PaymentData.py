@@ -7,27 +7,33 @@
 
 class PaymentData:
 
-    def __init__(self):
-        self.metode=""
-        self.titular=""
-        self.numero=""
-        self.codi_seg=""
-        self.importe=""
+    def __init__(self, titular):
+        self.titular = titular
+
 
     def leer_datos(self):
         self.lista_Vuelos=[]
         f = open("src/API/Precio/PaymentData.txt")
         linea = f.readline()
         while linea != "":
+            linea=linea.replace('\n','')
             titular=linea
             if titular==self.titular:
                 linea = f.readline()
+                linea=linea.replace('\n','')
+                linea=linea.replace(' ','')
                 numero=linea
                 linea = f.readline()
+                linea=linea.replace('\n','')
+                linea=linea.replace(' ','')
                 codi_seg=linea
                 linea = f.readline()
+                linea=linea.replace('\n','')
+                linea=linea.replace(' ','')
                 metodo=linea
                 linea = f.readline()
+                linea=linea.replace('\n','')
+                linea=linea.replace(' ','')
                 importe=linea
                 f.close()
                 PaymentDict = {
