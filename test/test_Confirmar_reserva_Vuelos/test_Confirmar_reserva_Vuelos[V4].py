@@ -138,9 +138,7 @@ class TestConfirmar(unittest.TestCase):
         obj_viaje=Viaje(id_viaje,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario_Obj_temp)
         
         #init
-        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje.get_vuelos(),obj_viaje.get_user(),obj_viaje.get_num_viatgers())
-        
-        Reserva_Obj_temp.GuardarViatge(obj_viaje)
+        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje)
         
         #Fail on 1st try
 
@@ -151,9 +149,8 @@ class TestConfirmar(unittest.TestCase):
 
         #Success after 1st fail
         #init
-        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje.get_vuelos(),obj_viaje.get_user(),obj_viaje.get_num_viatgers())
-        
-        Reserva_Obj_temp.GuardarViatge(obj_viaje)
+       
+        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje)
 
         res = Reserva_Obj_temp.ConfirmacioReserva("Empty",obj_viaje.get_user(),obj_viaje.get_num_viatgers())
         res = Reserva_Obj_temp.ConfirmacioReserva(obj_viaje.get_vuelos(),obj_viaje.get_user(),obj_viaje.get_num_viatgers())
@@ -163,9 +160,9 @@ class TestConfirmar(unittest.TestCase):
         #No success 5 attemps
         
         #init
-        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje.get_vuelos(),obj_viaje.get_user(),obj_viaje.get_num_viatgers())
+        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje)
         
-        Reserva_Obj_temp.GuardarViatge(obj_viaje)
+        
         
         res = Reserva_Obj_temp.ConfirmacioReserva(obj_viaje.get_vuelos(),obj_viaje.get_user(),"Empty")
         res = Reserva_Obj_temp.ConfirmacioReserva(obj_viaje.get_vuelos(),obj_viaje.get_user(),"Empty")

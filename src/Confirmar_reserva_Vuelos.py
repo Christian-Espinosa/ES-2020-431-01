@@ -18,15 +18,9 @@ from API.Coche import Cars
 
 class Confirmar_reserva_Vuelos:
     ViatgeReserva=None
-    def __init__(self,lista_avion, usuario,viatgers):
-        self.lista_avion=lista_avion
-        self.usuario=usuario
-        self.viatgers= viatgers
-        self.intentos=4
-
-    
-    def GuardarViatge(self, ViatgeReserva):
+    def __init__(self, ViatgeReserva):
         self.ViatgeReserva= ViatgeReserva
+        self.intentos=4
 
     def ConfirmacioReserva(self,llista_avions,user,nviatgers):
         

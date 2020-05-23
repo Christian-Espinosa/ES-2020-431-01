@@ -127,8 +127,9 @@ class TestConfirmar(unittest.TestCase):
         
         obj_viaje=Viaje(id_viaje,Viatgers_Obj_temp,Destinos_Obj_temp,Usuario_Obj_temp)
         
-        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje.get_vuelos(),obj_viaje.get_user(),obj_viaje.get_num_viatgers())
-        Reserva_Obj_temp.GuardarViatge(obj_viaje)
+        #init
+        Reserva_Obj_temp= Confirmar_reserva_Vuelos(obj_viaje)
+        
         res = Reserva_Obj_temp.ConfirmacioReserva(obj_viaje.get_vuelos(),obj_viaje.get_user(),obj_viaje.get_num_viatgers())
         
         assert res== True
