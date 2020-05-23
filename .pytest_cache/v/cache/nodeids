@@ -18,5 +18,11 @@
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_Visa_SinViajero_SALVADO",
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero_SALVADO",
   "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO",
-  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO"
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_4[V4].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinDestino",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_Visa::test_Gestionar_Metodo_Visa_SinViajero_SALVADO",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinDestino",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero",
+  "test/test_Gestionar_Metodo_de_Pago/test_Gestionar_Metodo_de_Pago_5[V5].py::test_Gestionar_Metodo_de_Pago_MasterCard::test_Gestionar_Metodo_MasterCard_SinViajero_SALVADO"
 ]
